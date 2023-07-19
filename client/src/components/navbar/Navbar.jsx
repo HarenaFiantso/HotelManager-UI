@@ -12,10 +12,10 @@ function Navbar() {
         <h1 className="logo">DreamHotel</h1>
         <div class="navItems">
           <a href="#" class="button">
-            Register <FontAwesomeIcon icon={faUser} />
+            S'enregistrer <FontAwesomeIcon icon={faUser} />
           </a>
           <a href="#" class="button">
-            Login <FontAwesomeIcon icon={faRightToBracket} />
+            S'identifier <FontAwesomeIcon icon={faRightToBracket} />
           </a>
         </div>
       </div>

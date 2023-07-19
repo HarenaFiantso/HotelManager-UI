@@ -1,7 +1,7 @@
 .navbar {
   height: 3rem;
-  padding: 1rem 0;
-  background-color: #161627;
+  padding: 0.8rem 0;
+  background-color: #f0f0f0;
   box-shadow: 0 8px 24px #0000004d;
   display: flex;
   align-items: center;
@@ -20,20 +20,19 @@
 .logo {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #f2f1f3;
+  color: #000;
 }
 
 .button {
   display: inline-flex;
   align-items: center;
-  column-gap: 0.5rem;
-  background-color: #6E57E0;
+  background-color: #743800;
   color: #FFF;
   padding: 10px 25px;
-  border-radius: 20px;
   cursor: pointer;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-  margin: 10px;
+  margin: 0 10px;
+  border-radius: 20px;
 }
 
 .navItems a {
