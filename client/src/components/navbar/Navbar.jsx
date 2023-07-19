@@ -1,4 +1,4 @@
-import { faUser, faRightToBracket } from "@fortawesome/free-solid-svg-icons";
+import { faBeer, faRightToBracket, faCoffee, faChampagneGlasses } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./navbar.css";
 
@@ -10,12 +10,18 @@ function Navbar() {
     <div className="navbar">
       <div className="navContainer">
         <h1 className="logo">DreamHotel</h1>
-        <div class="navItems">
-          <a href="#" class="button">
-            S'enregistrer <FontAwesomeIcon icon={faUser} />
+        <div className="navItems">
+          <a href="#" className="button">
+            <FontAwesomeIcon icon={faBeer} />
           </a>
-          <a href="#" class="button">
-            S'identifier <FontAwesomeIcon icon={faRightToBracket} />
+          <a href="#" className="button">
+            <FontAwesomeIcon icon={faCoffee} />
+          </a>
+          <a href="#" className="button">
+            <FontAwesomeIcon icon={faChampagneGlasses} />
+          </a>
+          <a href="#" className="button">
+            <FontAwesomeIcon icon={faRightToBracket} />
           </a>
         </div>
       </div>

@@ -26,20 +26,16 @@
 .button {
   display: inline-flex;
   align-items: center;
-  background-color: #743800;
+  background-color: #076683;
   color: #FFF;
-  padding: 10px 25px;
+  padding: 15px;
   cursor: pointer;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
   margin: 0 10px;
-  border-radius: 20px;
+  border-radius: 50%;
 }
 
 .navItems a {
   text-decoration: none;
   list-style: none;
-}
-
-.button i {
-  font-size: 1.25rem;
 }
