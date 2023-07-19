@@ -6,7 +6,8 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home />}/>
+          {/* This is the route of the home page of the application */}
+          <Route path="/" element={<Home />} />
         </Routes>
       </BrowserRouter>
     </div>
