@@ -1,0 +1,52 @@
+.header {
+  width: 100vw;
+  height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.555), rgba(77, 51, 5, 0.315)),
+    url(HOTEL-1.webp);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.headerContainer {
+  width: 100%;
+  max-width: 1024px;
+  margin: 20px 0px 100px 0px;
+}
+
+.headerList {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 50px;
+}
+
+.headerTitle {
+  width: 700px;
+  color: white;
+  font-size: 4rem;
+}
+
+.headerDescription {
+  color: white;
+  width: 700px;
+}
+
+.headerButton {
+  display: inline-flex;
+  align-items: center;
+  background-color: #743800;
+  color: #FFF;
+  padding: 10px 25px;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  margin: 0 10px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+a {
+  text-decoration: none;
+  list-style: none;
+}
