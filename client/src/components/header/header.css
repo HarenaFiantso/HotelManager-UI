@@ -1,11 +1,11 @@
 .header {
-  width: 100vw;
-  height: 100vh;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(77, 51, 5, 0.5)),
-    url(HOTEL-1.webp);
+  background-image: linear-gradient(rgba(77, 51, 5, 0.8), rgba(0, 0, 0, 0.8)),
+  url(HOTEL-1.webp);
+  height: 80vh;
   background-size: cover;
   background-position: center;
   display: flex;
+  color: white;
   justify-content: center;
   position: relative;
 }
@@ -13,7 +13,11 @@
 .headerContainer {
   width: 100%;
   max-width: 1024px;
-  margin: 20px 0px 100px 0px;
+  margin: 20px 0 100px 0;
+}
+
+.headerContainer.listMode {
+  margin: 20px 0 0 0;
 }
 
 .headerList {
@@ -28,59 +32,44 @@
   font-size: 4rem;
 }
 
-.headerDescription {
+.headerDesc {
   color: white;
   width: 700px;
-}
-
-.headerButton {
-  display: inline-flex;
-  align-items: center;
-  background-color: #743800;
-  color: #FFF;
-  padding: 10px 25px;
-  cursor: pointer;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-  margin: 0 10px;
-  text-transform: uppercase;
-  font-weight: bold;
+  margin: 20px 0;
 }
 
 a {
   text-decoration: none;
-  list-style: none;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.headerBtn {
+  background-color: #4f2500;
+  color: white;
+  font-weight: 500;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
 }
 
 .headerSearch {
-  height: 40px;
+  height: 30px;
   background-color: #f0f0f0;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
   display: flex;
   align-items: center;
   justify-content: space-around;
   padding: 10px 0;
-  border-radius: 20px;
+  border-radius: 5px;
   position: absolute;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
   bottom: -25px;
   width: 100%;
   max-width: 1024px;
 }
 
 .headerIcon {
-  color: #6d6d6d;
-}
-
-.headerSearchButton {
-  display: inline-flex;
-  align-items: center;
-  color: #FFF;
-  padding: 10px 25px;
-  cursor: pointer;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-  margin: 0 10px;
-  text-transform: uppercase;
-  font-weight: bold;
-  background-color: #4f2500;
+  color: darkgrey;
 }
 
 .headerSearchItem {
@@ -92,11 +81,54 @@ a {
 .headerSearchInput {
   border: none;
   outline: none;
-  font-weight: bolder;
-  font-family: "Poppins", sans-serif;
 }
 
 .headerSearchText {
+  color: #2a2a2a;
   cursor: pointer;
-  color: darkgrey;
+}
+
+.date {
+  position: absolute;
+  top: 50px;
+  z-index: 2;
+}
+
+.options {
+  z-index: 2;
+  position: absolute;
+  top: 50px;
+  background-color: white;
+  color: gray;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 0.4);
+}
+
+.optionItem {
+  width: 200px;
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+}
+
+.optionCounter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  color: black;
+}
+
+.optionCounterButton {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #0071c2;
+  color: #0071c2;
+  cursor: pointer;
+  background-color: white;
+}
+
+.optionCounterButton:disabled {
+  cursor: not-allowed;
 }
