@@ -88,7 +88,7 @@ const Header = ({type}) => {
             >{`${options.adult} adulte(s) · ${options.children} enfant(s) · ${options.room} salle(s)`}</span>
             {openOptions && (<div className="options">
               <div className="optionItem">
-                <span className="optionText">Adulte(s)</span>
+                <span className="optionText">Adulte</span>
                 <div className="optionCounter">
                   <button
                     disabled={options.adult <= 1}
@@ -109,7 +109,7 @@ const Header = ({type}) => {
                 </div>
               </div>
               <div className="optionItem">
-                <span className="optionText">Enfant(s)</span>
+                <span className="optionText">Enfant</span>
                 <div className="optionCounter">
                   <button
                     disabled={options.children <= 0}
@@ -130,7 +130,7 @@ const Header = ({type}) => {
                 </div>
               </div>
               <div className="optionItem">
-                <span className="optionText">Salle(s)</span>
+                <span className="optionText">Salle</span>
                 <div className="optionCounter">
                   <button
                     disabled={options.room <= 1}
