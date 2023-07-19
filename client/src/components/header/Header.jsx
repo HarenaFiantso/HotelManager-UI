@@ -85,7 +85,7 @@ const Header = ({type}) => {
             <span
               onClick={() => setOpenOptions(!openOptions)}
               className="headerSearchText"
-            >{`${options.adult} adulte(s) · ${options.children} children(s) · ${options.room} salle(s)`}</span>
+            >{`${options.adult} adulte(s) · ${options.children} enfant(s) · ${options.room} salle(s)`}</span>
             {openOptions && (<div className="options">
               <div className="optionItem">
                 <span className="optionText">Adulte(s)</span>
