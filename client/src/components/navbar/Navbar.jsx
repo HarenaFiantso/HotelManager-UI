@@ -1,3 +1,5 @@
+import { faUser, faRightToBracket } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./navbar.css";
 
 function Navbar() {
@@ -8,9 +10,13 @@ function Navbar() {
     <div className="navbar">
       <div className="navContainer">
         <h1 className="logo">DreamHotel</h1>
-        <div className="navItems">
-          <button className="navButton">Register</button>
-          <button className="navButton">Login</button>
+        <div class="navItems">
+          <a href="#" class="button">
+            Register <FontAwesomeIcon icon={faUser} />
+          </a>
+          <a href="#" class="button">
+            Login <FontAwesomeIcon icon={faRightToBracket} />
+          </a>
         </div>
       </div>
     </div>
