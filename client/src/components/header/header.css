@@ -1,7 +1,7 @@
 .header {
   width: 100vw;
   height: 100vh;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.555), rgba(77, 51, 5, 0.315)),
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(77, 51, 5, 0.5)),
     url(HOTEL-1.webp);
   background-size: cover;
   background-position: center;
@@ -43,10 +43,42 @@
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
   margin: 0 10px;
   text-transform: uppercase;
-  font-weight: 500;
+  font-weight: bold;
 }
 
 a {
   text-decoration: none;
   list-style: none;
+}
+
+.headerSearch {
+  height: 40px;
+  background-color: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 10px 0;
+  border-radius: 20px;
+  position: absolute;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  bottom: -25px;
+  width: 100%;
+  max-width: 1024px;
+}
+
+.headerIcon {
+  color: #6d6d6d;
+}
+
+.headerSearchButton {
+  display: inline-flex;
+  align-items: center;
+  color: #FFF;
+  padding: 10px 25px;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  margin: 0 10px;
+  text-transform: uppercase;
+  font-weight: bold;
+  background-color: #076683FF;
 }
