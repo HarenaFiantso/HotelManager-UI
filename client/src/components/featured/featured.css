@@ -1,4 +1,4 @@
-.featured{
+.featured {
   width: 100%;
   max-width: 1024px;
   display: flex;
@@ -8,23 +8,23 @@
   margin: 20px 0;
 }
 
-.featuredItem{
+.featuredItem {
   position: relative;
   color: white;
   border-radius: 10px;
   overflow: hidden;
   height: 250px;
-  flex:1
+  flex: 1;
 }
 
-.featuredImg{
+.featuredImg {
   width: 100%;
   height: 100%;
   object-fit: cover;
   filter: brightness(50%);
 }
 
-.featuredTitles{
+.featuredTitles {
   position: absolute;
   bottom: 20px;
   left: 20px;
