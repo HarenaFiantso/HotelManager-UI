@@ -1,7 +1,7 @@
 import "./featured.css";
-import ImageOne from "./HOTEL-2.jpg";
-import ImageTwo from "./HOTEL-3.jpeg";
-import ImageThree from "./HOTEL-6.jpg";
+import ImageOne from "../../assets/HOTEL-1.webp";
+import ImageTwo from "../../assets/HOTEL-2.jpg";
+import ImageThree from "../../assets/HOTEL-3.jpeg";
 
 function featured() {
   return (
@@ -26,7 +26,7 @@ function featured() {
         />
         <div className="featuredTitles">
           <h1>Toamasina</h1>
-          <h2>24 propriétés</h2>
+          <h2>69 propriétés</h2>
         </div>
       </div>
       <div className="featuredItem">
@@ -37,7 +37,7 @@ function featured() {
         />
         <div className="featuredTitles">
           <h1>Fianarantsoa</h1>
-          <h2>18 propriétés</h2>
+          <h2>69 propriétés</h2>
         </div>
       </div>
     </div>
