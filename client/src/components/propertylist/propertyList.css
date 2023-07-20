@@ -1,13 +1,12 @@
 .propertyContainer {
-  width: 100vw;
+  width: 100%;
   display: flex;
   justify-content: space-around;
-  padding: 2rem;
+  padding: 2rem 0;
   background-color: rgb(235, 235, 235);
 }
 
 .propertyList {
-  max-width: 1024px;
   display: flex;
   justify-content: space-between;
   gap: 20px;
