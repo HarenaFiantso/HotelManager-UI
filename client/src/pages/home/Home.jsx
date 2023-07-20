@@ -5,6 +5,7 @@ import PropertyList from "../../components/propertylist/PropertyList";
 import FeaturedProperties from "../../components/featuredProperties/FeaturedProperties.jsx";
 
 import "./home.css";
+import MailList from "../../components/mailList/MailList.jsx";
 
 function Home() {
   {
@@ -21,6 +22,7 @@ function Home() {
         <PropertyList />
         <h1 className="homeTitle">Nos meilleurs propriétés</h1>
         <FeaturedProperties />
+        <MailList />
       </div>
     </div>
   );
