@@ -11,7 +11,7 @@ function App() {
           <Route path="/" element={<Home />} />
 
           {/* This is the route of the hotel list page of the application */}
-          <Route path="/hotels" element={<List />}/>
+          <Route path="/hotels" element={<List />} />
         </Routes>
       </BrowserRouter>
     </div>

@@ -1,13 +1,16 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCloudMoon } from "@fortawesome/free-solid-svg-icons";
+
 import "./propertyList.css";
 import ImageOne from "../../assets/HOTEL-1.webp";
 import ImageTwo from "../../assets/HOTEL-2.jpg";
 import ImageThree from "../../assets/HOTEL-3.jpeg";
 import ImageFour from "../../assets/HOTEL-6.jpg";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCloudMoon } from "@fortawesome/free-solid-svg-icons";
-
 function PropertyList() {
+  {
+    /* This is the propertyList component of our home page  */
+  }
   return (
     <div className="propertyContainer">
       <div className="propertyList">

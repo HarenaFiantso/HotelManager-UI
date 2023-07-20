@@ -6,6 +6,10 @@ import PropertyList from "../../components/propertylist/PropertyList";
 import "./home.css";
 
 function Home() {
+  {
+    /* This is our home page to render in our main App.js */
+  }
+  
   return (
     <div>
       <Navbar />
