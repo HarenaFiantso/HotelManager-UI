@@ -29,12 +29,14 @@
   width: 700px;
   color: white;
   font-size: 4rem;
+  margin-bottom: 5px;
 }
 
 .headerDesc {
   color: white;
   width: 700px;
-  margin: 20px 0;
+  margin: 30px 0;
+  font-size: 20px;
 }
 
 a {
@@ -44,10 +46,11 @@ a {
 }
 
 .headerBtn {
-  background-color: #4f2500;
+  background-color: #5f2e03;
   color: white;
   font-weight: 500;
   border: none;
+  border-radius: 10px;
   padding: 10px;
   cursor: pointer;
 }
@@ -74,12 +77,13 @@ a {
 .headerSearchItem {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 30px;
 }
 
 .headerSearchInput {
   border: none;
   outline: none;
+  background-color: #f0f0f0;
 }
 
 .headerSearchText {
@@ -129,4 +133,14 @@ a {
 
 .optionCounterButton:disabled {
   cursor: not-allowed;
+}
+
+.dreamHotel {
+  font-size: 6rem;
+}
+
+#searchBtn{
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
 }

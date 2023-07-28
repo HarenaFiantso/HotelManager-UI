@@ -46,15 +46,11 @@ function Header({ type }) {
 
   return (
     <div className="header">
-      <div
-        className={
-          type === "list" ? "headerContainer listMode" : "headerContainer"
-        }
-      >
+      <div className={type === "list" ? "headerContainer listMode" : "headerContainer"}>
         {type !== "list" && (
           <>
             {/* Dans la section suivante, on va trouver le texte de la section header. Je pense que c'est facile à lire */}
-            <h1 className="headerTitle">Bienvenue sur DreamHotel !</h1>
+            <h1 className="headerTitle">Bienvenue sur <a className="dreamHotel">DreamHotel</a></h1>
             <p className="headerDesc">
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Voluptates culpa velit, impedit quis ipsum nobis pariatur modi
@@ -97,83 +93,9 @@ function Header({ type }) {
                   />
                 )}
               </div>
-
+              
               <div className="headerSearchItem">
-                <FontAwesomeIcon icon={faPerson} className="headerIcon" />
-                <span
-                  onClick={() => setOpenOptions(!openOptions)}
-                  className="headerSearchText"
-                >{`${options.adult} adulte(s) · ${options.children} enfant(s) · ${options.room} salle(s)`}</span>
-                {openOptions && (
-                  <div className="options">
-                    <div className="optionItem">
-                      <span className="optionText">Adulte</span>
-                      <div className="optionCounter">
-                        <button
-                          disabled={options.adult <= 1}
-                          className="optionCounterButton"
-                          onClick={() => handleOption("adult", "d")}
-                        >
-                          -
-                        </button>
-                        <span className="optionCounterNumber">
-                          {options.adult}
-                        </span>
-                        <button
-                          className="optionCounterButton"
-                          onClick={() => handleOption("adult", "i")}
-                        >
-                          +
-                        </button>
-                      </div>
-                    </div>
-                    <div className="optionItem">
-                      <span className="optionText">Enfant</span>
-                      <div className="optionCounter">
-                        <button
-                          disabled={options.children <= 0}
-                          className="optionCounterButton"
-                          onClick={() => handleOption("children", "d")}
-                        >
-                          -
-                        </button>
-                        <span className="optionCounterNumber">
-                          {options.children}
-                        </span>
-                        <button
-                          className="optionCounterButton"
-                          onClick={() => handleOption("children", "i")}
-                        >
-                          +
-                        </button>
-                      </div>
-                    </div>
-                    <div className="optionItem">
-                      <span className="optionText">Salle</span>
-                      <div className="optionCounter">
-                        <button
-                          disabled={options.room <= 1}
-                          className="optionCounterButton"
-                          onClick={() => handleOption("room", "d")}
-                        >
-                          -
-                        </button>
-                        <span className="optionCounterNumber">
-                          {options.room}
-                        </span>
-                        <button
-                          className="optionCounterButton"
-                          onClick={() => handleOption("room", "i")}
-                        >
-                          +
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                )}
-              </div>
-              <div className="headerSearchItem">
-                <button className="headerBtn" onClick={handleSearch}>
+                <button className="headerBtn" id="searchBtn" onClick={handleSearch}>
                   Chercher
                 </button>
               </div>
