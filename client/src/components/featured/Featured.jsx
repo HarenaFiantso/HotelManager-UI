@@ -17,7 +17,7 @@ function Featured() {
               className="featuredImg"
             />
             <div className="featuredTitles">
-              <h1>Berlin</h1>
+              <h1>Antananrivo</h1>
               <h2>{data[0]} properties</h2>
             </div>
           </div>
@@ -29,7 +29,7 @@ function Featured() {
               className="featuredImg"
             />
             <div className="featuredTitles">
-              <h1>Madrid</h1>
+              <h1>Mahajanga</h1>
               <h2>{data[1]} properties</h2>
             </div>
           </div>
@@ -40,7 +40,7 @@ function Featured() {
               className="featuredImg"
             />
             <div className="featuredTitles">
-              <h1>London</h1>
+              <h1>Toamasina</h1>
               <h2>{data[2]} properties</h2>
             </div>
           </div>

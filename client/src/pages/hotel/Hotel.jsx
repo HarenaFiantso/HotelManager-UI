@@ -2,7 +2,6 @@ import "./hotel.css";
 import Navbar from "../../components/navbar/Navbar";
 import Header from "../../components/header/Header";
 import MailList from "../../components/mailList/MailList";
-import Footer from "../../components/footer/Footer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCircleArrowLeft,
@@ -143,7 +142,6 @@ const Hotel = () => {
             </div>
           </div>
           <MailList />
-          <Footer />
         </div>
       )}
       {openModal && <Reserve setOpen={setOpenModal} hotelId={id}/>}

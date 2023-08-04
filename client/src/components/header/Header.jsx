@@ -37,7 +37,6 @@ const Header = ({ type }) => {
   const navigate = useNavigate();
   const { user } = useContext(AuthContext);
 
-
   const handleOption = (name, operation) => {
     setOptions((prev) => {
       return {
@@ -61,36 +60,14 @@ const Header = ({ type }) => {
           type === "list" ? "headerContainer listMode" : "headerContainer"
         }
       >
-        <div className="headerList">
-          <div className="headerListItem active">
-            <FontAwesomeIcon icon={faBed} />
-            <span>Stays</span>
-          </div>
-          <div className="headerListItem">
-            <FontAwesomeIcon icon={faPlane} />
-            <span>Flights</span>
-          </div>
-          <div className="headerListItem">
-            <FontAwesomeIcon icon={faCar} />
-            <span>Car rentals</span>
-          </div>
-          <div className="headerListItem">
-            <FontAwesomeIcon icon={faBed} />
-            <span>Attractions</span>
-          </div>
-          <div className="headerListItem">
-            <FontAwesomeIcon icon={faTaxi} />
-            <span>Airport taxis</span>
-          </div>
-        </div>
         {type !== "list" && (
           <>
-            <h1 className="headerTitle">
-              A lifetime of discounts? It's Genius.
-            </h1>
+            <h1 className="headerTitle">Bienvenue dans DreamHotel !</h1>
             <p className="headerDesc">
-              Get rewarded for your travels – unlock instant savings of 10% or
-              more with a free Lamabooking account
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum,
+              quia, excepturi eveniet quos, distinctio esse at veritatis harum
+              sint totam quis repellendus eligendi eum impedit voluptatum
+              repudiandae libero est ducimus!
             </p>
             {!user && <button className="headerBtn">Sign in / Register</button>}
             <div className="headerSearch">
@@ -98,7 +75,7 @@ const Header = ({ type }) => {
                 <FontAwesomeIcon icon={faBed} className="headerIcon" />
                 <input
                   type="text"
-                  placeholder="Where are you going?"
+                  placeholder="Où allons nous?"
                   className="headerSearchInput"
                   onChange={(e) => setDestination(e.target.value)}
                 />
