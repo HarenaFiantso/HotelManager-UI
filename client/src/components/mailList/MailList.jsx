@@ -1,18 +1,16 @@
-import "./mailList.css";
+import "./mailList.css"
 
-function MailList() {
+const MailList = () => {
   return (
     <div className="mail">
-      <h1 className="mailTitle">Économise ton argent, choisis DreamHotel ! </h1>
-      <span className="mailDesc">
-        Rejoins nous et nous te donnerons le meilleur de nous même
-      </span>
+      <h1 className="mailTitle">Save time, save money!</h1>
+      <span className="mailDesc">Sign up and we'll send the best deals to you</span>
       <div className="mailInputContainer">
         <input type="text" placeholder="Your Email" />
-        <button>Rejoindre</button>
+        <button>Subscribe</button>
       </div>
     </div>
-  );
+  )
 }
 
-export default MailList;
+export default MailList

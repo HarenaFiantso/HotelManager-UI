@@ -1,118 +1,35 @@
-import ImageOne from "../../assets/HOTEL-1.webp";
-import ImageTwo from "../../assets/HOTEL-2.jpg";
-import ImageThree from "../../assets/HOTEL-3.jpeg";
-import ImageFour from "../../assets/HOTEL-6.jpg";
-
+import useFetch from "../../hooks/useFetch";
 import "./featuredProperties.css";
 
-function FeaturedProperties() {
+const FeaturedProperties = () => {
+  const { data, loading, error } = useFetch("/hotels?featured=true&limit=4");
+
   return (
     <div className="fp">
-      <div className="fpItem">
-        <img src={ImageOne} alt="" className="fpImg" />
-        <div className="fpDetails">
-          <span className="fpName">ETS Hotel</span>
-          <span className="fpCity">Behenjy</span>
-          <span className="fpPrice">À partir de 69.000ar</span>
-          <div className="fpRating">
-            <button>9.6</button>
-            <span>Excellent</span>
-          </div>
-        </div>
-      </div>
-
-      <div className="fpItem">
-        <img src={ImageTwo} alt="" className="fpImg" />
-        <div className="fpDetails">
-          <span className="fpName">ETS Hotel</span>
-          <span className="fpCity">Behenjy</span>
-          <span className="fpPrice">À partir de 69.000ar</span>
-          <div className="fpRating">
-            <button>9.6</button>
-            <span>Excellent</span>
-          </div>
-        </div>
-      </div>
-
-      <div className="fpItem">
-        <img src={ImageThree} alt="" className="fpImg" />
-        <div className="fpDetails">
-          <span className="fpName">ETS Hotel</span>
-          <span className="fpCity">Behenjy</span>
-          <span className="fpPrice">À partir de 69.000ar</span>
-          <div className="fpRating">
-            <button>9.6</button>
-            <span>Excellent</span>
-          </div>
-        </div>
-      </div>
-
-      <div className="fpItem">
-        <img src={ImageFour} alt="" className="fpImg" />
-        <div className="fpDetails">
-          <span className="fpName">ETS Hotel</span>
-          <span className="fpCity">Behenjy</span>
-          <span className="fpPrice">À partir de 69.000ar</span>
-          <div className="fpRating">
-            <button>9.6</button>
-            <span>Excellent</span>
-          </div>
-        </div>
-      </div>
-
-      <div className="fpItem">
-        <img src={ImageOne} alt="" className="fpImg" />
-        <div className="fpDetails">
-          <span className="fpName">ETS Hotel</span>
-          <span className="fpCity">Behenjy</span>
-          <span className="fpPrice">À partir de 69.000ar</span>
-          <div className="fpRating">
-            <button>9.6</button>
-            <span>Excellent</span>
-          </div>
-        </div>
-      </div>
-
-      <div className="fpItem">
-        <img src={ImageTwo} alt="" className="fpImg" />
-        <div className="fpDetails">
-          <span className="fpName">ETS Hotel</span>
-          <span className="fpCity">Behenjy</span>
-          <span className="fpPrice">À partir de 69.000ar</span>
-          <div className="fpRating">
-            <button>9.6</button>
-            <span>Excellent</span>
-          </div>
-        </div>
-      </div>
-
-      <div className="fpItem">
-        <img src={ImageThree} alt="" className="fpImg" />
-        <div className="fpDetails">
-          <span className="fpName">ETS Hotel</span>
-          <span className="fpCity">Behenjy</span>
-          <span className="fpPrice">À partir de 69.000ar</span>
-          <div className="fpRating">
-            <button>9.6</button>
-            <span>Excellent</span>
-          </div>
-        </div>
-      </div>
-
-      <div className="fpItem">
-        <img src={ImageFour} alt="" className="fpImg" />
-        <div className="fpDetails">
-          <span className="fpName">ETS Hotel</span>
-          <span className="fpCity">Behenjy</span>
-          <span className="fpPrice">À partir de 69.000ar</span>
-          <div className="fpRating">
-            <button>9.6</button>
-            <span>Excellent</span>
-          </div>
-        </div>
-      </div>
+      {loading ? (
+        "Loading"
+      ) : (
+        <>
+          {data.map((item) => (
+            <div className="fpItem" key={item._id}>
+              <img src={item.photos[0]} alt="" className="fpImg" />
+              <span className="fpName">{item.name}</span>
+              <span className="fpCity">{item.city}</span>
+              <span className="fpPrice">
+                Starting from ${item.cheapestPrice}
+              </span>
+              {item.rating && (
+                <div className="fpRating">
+                  <button>{item.rating}</button>
+                  <span>Excellent</span>
+                </div>
+              )}
+            </div>
+          ))}
+        </>
+      )}
     </div>
   );
-}
+};
 
 export default FeaturedProperties;

@@ -1,4 +1,5 @@
 import Featured from "../../components/featured/Featured";
+import Footer from "../../components/footer/Footer"
 import FeaturedProperties from "../../components/featuredProperties/FeaturedProperties";
 import Header from "../../components/header/Header";
 import MailList from "../../components/mailList/MailList";
@@ -10,15 +11,15 @@ const Home = () => {
   return (
     <div>
       <Navbar />
-      <Header />
+      <Header/>
       <div className="homeContainer">
-        <Featured />
+        <Featured/>
         <h1 className="homeTitle">Browse by property type</h1>
-        <PropertyList />
+        <PropertyList/>
         <h1 className="homeTitle">Homes guests love</h1>
-        <FeaturedProperties />
-        <MailList />
-        <Footer />
+        <FeaturedProperties/>
+        <MailList/>
+        <Footer/>
       </div>
     </div>
   );

@@ -1,39 +1,25 @@
-import {
-  faBeer,
-  faRightToBracket,
-  faCoffee,
-  faChampagneGlasses,
-} from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
 import "./navbar.css";
+import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../../context/AuthContext";
+const Navbar = () => {
+  const { user } = useContext(AuthContext);
 
-function Navbar() {
-  {
-    /* This is the Navigation bar of our Home/Main page application */
-  }
-  
   return (
     <div className="navbar">
       <div className="navContainer">
-        <h1 className="logo">DreamHotel</h1>
-        <div className="navItems">
-          <a href="#" className="button">
-            <FontAwesomeIcon icon={faBeer} />
-          </a>
-          <a href="#" className="button">
-            <FontAwesomeIcon icon={faCoffee} />
-          </a>
-          <a href="#" className="button">
-            <FontAwesomeIcon icon={faChampagneGlasses} />
-          </a>
-          <a href="#" className="button">
-            <FontAwesomeIcon icon={faRightToBracket} />
-          </a>
-        </div>
+        <Link to="/" style={{ color: "inherit", textDecoration: "none" }}>
+          <span className="logo">lamabooking</span>
+        </Link>
+        {user ? user.username : (
+          <div className="navItems">
+            <button className="navButton">Register</button>
+            <button className="navButton">Login</button>
+          </div>
+        )}
       </div>
     </div>
   );
-}
+};
 
 export default Navbar;
