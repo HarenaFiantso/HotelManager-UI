@@ -1,31 +1,27 @@
-import Header from "../../components/header/Header.jsx";
-import Navbar from "../../components/navbar/Navbar.jsx";
 import Featured from "../../components/featured/Featured";
-import PropertyList from "../../components/propertylist/PropertyList";
-import FeaturedProperties from "../../components/featuredProperties/FeaturedProperties.jsx";
-
+import FeaturedProperties from "../../components/featuredProperties/FeaturedProperties";
+import Header from "../../components/header/Header";
+import MailList from "../../components/mailList/MailList";
+import Navbar from "../../components/navbar/Navbar";
+import PropertyList from "../../components/propertyList/PropertyList";
 import "./home.css";
-import MailList from "../../components/mailList/MailList.jsx";
 
-function Home() {
-  {
-    /* This is our home page to render in our main App.js */
-  }
-
+const Home = () => {
   return (
     <div>
       <Navbar />
       <Header />
       <div className="homeContainer">
         <Featured />
-        <h1 className="homeTitle">Découvrez nos types de propriété</h1>
+        <h1 className="homeTitle">Browse by property type</h1>
         <PropertyList />
-        <h1 className="homeTitle">Nos meilleurs propriétés</h1>
+        <h1 className="homeTitle">Homes guests love</h1>
         <FeaturedProperties />
         <MailList />
+        <Footer />
       </div>
     </div>
   );
-}
+};
 
 export default Home;
