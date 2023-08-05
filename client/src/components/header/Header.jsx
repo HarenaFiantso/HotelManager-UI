@@ -1,10 +1,7 @@
 import {
   faBed,
   faCalendarDays,
-  faCar,
   faPerson,
-  faPlane,
-  faTaxi,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./header.css";
@@ -16,6 +13,7 @@ import { format } from "date-fns";
 import { useNavigate } from "react-router-dom";
 import { SearchContext } from "../../context/SearchContext";
 import { AuthContext } from "../../context/AuthContext";
+import banner from "../header/1.webp";
 
 const Header = ({ type }) => {
   const [destination, setDestination] = useState("");
@@ -55,6 +53,7 @@ const Header = ({ type }) => {
 
   return (
     <div className="header">
+      <img src alt="" srcset="" />
       <div
         className={
           type === "list" ? "headerContainer listMode" : "headerContainer"
@@ -62,14 +61,22 @@ const Header = ({ type }) => {
       >
         {type !== "list" && (
           <>
-            <h1 className="headerTitle">Bienvenue dans DreamHotel !</h1>
-            <p className="headerDesc">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum,
-              quia, excepturi eveniet quos, distinctio esse at veritatis harum
-              sint totam quis repellendus eligendi eum impedit voluptatum
-              repudiandae libero est ducimus!
-            </p>
-            {!user && <button className="headerBtn"> <span></span> S'authentifier</button>}
+            <div className="headerText">
+              <h1 className="headerTitle">Bienvenue dans DreamHotel !</h1>
+              <p className="headerDesc">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum,
+                quia, excepturi eveniet quos, distinctio esse at veritatis harum
+                sint totam quis repellendus eligendi eum impedit voluptatum
+                repudiandae libero est ducimus!
+              </p>
+
+              {!user && (
+                <button className="headerBtn">
+                  {" "}
+                  <span></span> S'authentifier
+                </button>
+              )}
+            </div>
             <div className="headerSearch">
               <div className="headerSearchItem">
                 <FontAwesomeIcon icon={faBed} className="headerIcon" />
@@ -85,7 +92,7 @@ const Header = ({ type }) => {
                 <span
                   onClick={() => setOpenDate(!openDate)}
                   className="headerSearchText"
-                >{`${format(dates[0].startDate, "MM/dd/yyyy")} to ${format(
+                >{`${format(dates[0].startDate, "MM/dd/yyyy")} à ${format(
                   dates[0].endDate,
                   "MM/dd/yyyy"
                 )}`}</span>
@@ -105,11 +112,11 @@ const Header = ({ type }) => {
                 <span
                   onClick={() => setOpenOptions(!openOptions)}
                   className="headerSearchText"
-                >{`${options.adult} adult · ${options.children} children · ${options.room} room`}</span>
+                >{`${options.adult} adulte · ${options.children} enfant · ${options.room} chambre`}</span>
                 {openOptions && (
                   <div className="options">
                     <div className="optionItem">
-                      <span className="optionText">Adult</span>
+                      <span className="optionText">Adulte</span>
                       <div className="optionCounter">
                         <button
                           disabled={options.adult <= 1}
@@ -130,7 +137,7 @@ const Header = ({ type }) => {
                       </div>
                     </div>
                     <div className="optionItem">
-                      <span className="optionText">Children</span>
+                      <span className="optionText">Enfant</span>
                       <div className="optionCounter">
                         <button
                           disabled={options.children <= 0}
@@ -151,7 +158,7 @@ const Header = ({ type }) => {
                       </div>
                     </div>
                     <div className="optionItem">
-                      <span className="optionText">Room</span>
+                      <span className="optionText">Chambre</span>
                       <div className="optionCounter">
                         <button
                           disabled={options.room <= 1}
@@ -176,7 +183,7 @@ const Header = ({ type }) => {
               </div>
               <div className="headerSearchItem">
                 <button className="headerSearchBtn" onClick={handleSearch}>
-                  Search
+                  Chercher
                 </button>
               </div>
             </div>

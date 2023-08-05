@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@700&display=swap');
 .header {
   width: 100%;
   height: 80vh;
@@ -12,9 +13,9 @@
 }
 
 .headerContainer {
-  width: 80%;
+  width: 100%;
   max-width: 1024px;
-  margin: 20px 0px 100px 0px;
+  margin: 30px 0px 100px 0px;
 }
 
 .headerContainer.listMode {
@@ -27,15 +28,26 @@
   margin-bottom: 50px;
 }
 
+.headerText {
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #fff;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -10%);
+  text-align: center;
+}
+
 .headerTitle {
-  width: 700px;
-  color: white;
-  font-size: 3.5rem;
-  margin-bottom: 5px;
+  font-size: 6rem;
+  font-family: 'Zilla Slab', serif;
 }
 
 .headerDesc {
-  color: white;
   width: 700px;
   margin: 30px 0;
   font-size: 14px;
@@ -44,25 +56,46 @@
 
 .headerBtn {
   width: 200px;
-  padding: 15px 0;
+  padding: 10px 0;
   text-align: center;
   margin: 20px 10px;
   border-radius: 20px;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 16px;
   text-transform: uppercase;
   border: none;
-  background: #4f2500;
+  background: var(--puce);
   color: #fff;
   cursor: pointer;
   position: relative;
   overflow: hidden;
+  transition: all .4s ease;
+}
+
+.headerBtn:hover {
+  background: var(--burnt-Orange);
+  font-size: 17px;
+}
+
+.headerSearchBtn {
+  padding: 10px 20px;
+  text-align: center;
+  margin: 20px 10px;
+  font-weight: bold;
+  font-size: 14px;
+  border: none;
+  background: var(--puce);
+  color: #fff;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all .4s ease;
 }
 
 .headerSearch {
-  height: 30px;
+  height: 50px;
   background-color: #f0f0f0;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 .3rem 1.5rem rgba(0, 0, 0, 0.6);
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -75,7 +108,8 @@
 }
 
 .headerIcon {
-  color: darkgrey;
+  color: var(--light-color);
+  font-size: 14px;
 }
 
 .headerSearchItem {
@@ -86,13 +120,17 @@
 
 .headerSearchInput {
   border: none;
+  background-color: transparent;
   outline: none;
-  background-color: #f0f0f0;
+  padding: 10px;
+  color: black;
+  font-weight: 400;
 }
 
 .headerSearchText {
-  color: #2a2a2a;
+  color: var(--light-color);
   cursor: pointer;
+  font-size: 14px;
 }
 
 .date {
@@ -113,6 +151,7 @@
 
 .optionItem {
   width: 200px;
+  font-size: 14px;
   display: flex;
   justify-content: space-between;
   margin: 10px;
@@ -122,21 +161,25 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 12px;
+  font-size: 14px;
   color: black;
 }
 
 .optionCounterButton {
   width: 30px;
   height: 30px;
-  border: 1px solid #0071c2;
-  color: #0071c2;
+  border: 1px solid var(--burnt-Orange);
+  color: var(--burnt-Orange);
   cursor: pointer;
   background-color: white;
 }
 
 .optionCounterButton:disabled {
   cursor: not-allowed;
+}
+
+.optionCounterNumber {
+  font-size: 12px;
 }
 
 #searchBtn {
