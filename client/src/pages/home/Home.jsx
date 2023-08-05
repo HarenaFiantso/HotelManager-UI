@@ -1,9 +1,10 @@
-/* import Featured from "../../components/featured/Featured";
-import FeaturedProperties from "../../components/featuredProperties/FeaturedProperties"; */
+import About from "../../components/about/About";
+import Featured from "../../components/featured/Featured";
+import FeaturedProperties from "../../components/featuredProperties/FeaturedProperties";
 import Header from "../../components/header/Header";
-/* import MailList from "../../components/mailList/MailList"; */
+import MailList from "../../components/mailList/MailList";
 import Navbar from "../../components/navbar/Navbar";
-/* import PropertyList from "../../components/propertyList/PropertyList"; */
+import PropertyList from "../../components/propertyList/PropertyList";
 import "./home.css";
 
 function Home() {
@@ -11,14 +12,16 @@ function Home() {
     <div>
       <Navbar />
       <Header />
-      {/* <div className="homeContainer">
+      <div className="homeContainer">
+
+        <About />
         <Featured />
         <h1 className="homeTitle">Browse by property type</h1>
         <PropertyList />
         <h1 className="homeTitle">Homes guests love</h1>
         <FeaturedProperties />
         <MailList />
-      </div> */}
+      </div>
     </div>
   );
 }

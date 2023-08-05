@@ -59,7 +59,7 @@
   padding: 10px 0;
   text-align: center;
   margin: 20px 10px;
-  border-radius: 20px;
+  border-radius: 0.5rem;
   font-weight: bold;
   font-size: 16px;
   text-transform: uppercase;
@@ -89,6 +89,7 @@
   cursor: pointer;
   position: relative;
   overflow: hidden;
+  border-radius: 0.5rem;
   transition: all .4s ease;
 }
 

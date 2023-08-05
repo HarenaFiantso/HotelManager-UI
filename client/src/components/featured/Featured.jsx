@@ -2,10 +2,10 @@ import useFetch from "../../hooks/useFetch";
 import "./featured.css";
 
 function Featured() {
-  const { data, loading, error } = useFetch("");
+  const { data, loading } = useFetch("");
 
   return (
-    <div className="featured">
+    <div className="featured" id="property">
       {loading ? (
         "Loading please wait"
       ) : (

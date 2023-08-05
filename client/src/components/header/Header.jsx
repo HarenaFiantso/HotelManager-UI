@@ -13,7 +13,6 @@ import { format } from "date-fns";
 import { useNavigate } from "react-router-dom";
 import { SearchContext } from "../../context/SearchContext";
 import { AuthContext } from "../../context/AuthContext";
-import banner from "../header/1.webp";
 
 const Header = ({ type }) => {
   const [destination, setDestination] = useState("");
@@ -53,7 +52,6 @@ const Header = ({ type }) => {
 
   return (
     <div className="header">
-      <img src alt="" srcset="" />
       <div
         className={
           type === "list" ? "headerContainer listMode" : "headerContainer"
