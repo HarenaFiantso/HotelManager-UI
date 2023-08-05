@@ -14,7 +14,7 @@ function Home() {
       <div className="homeContainer">
         <About />
         <Featured />
-        <h1 className="homeTitle">Homes guests love</h1>
+        <h1 className="homeTitle">Nos meilleurs hotels</h1>
         <FeaturedProperties />
         <MailList />
       </div>
