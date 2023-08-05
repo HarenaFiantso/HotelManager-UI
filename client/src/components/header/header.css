@@ -1,5 +1,10 @@
 .header {
-  background-color: #00193b;
+  width: 100%;
+  height: 80vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.89), rgba(24, 18, 7, 0.6)),
+    url(1.webp);
+  background-size: cover;
+  background-position: center;
   color: white;
   display: flex;
   justify-content: center;
@@ -7,7 +12,7 @@
 }
 
 .headerContainer {
-  width: 100%;
+  width: 80%;
   max-width: 1024px;
   margin: 20px 0px 100px 0px;
 }
@@ -22,39 +27,46 @@
   margin-bottom: 50px;
 }
 
-.headerListItem {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.headerListItem.active {
-  border: 1px solid white;
-  padding: 10px;
-  border-radius: 20px;
+.headerTitle {
+  width: 700px;
+  color: white;
+  font-size: 3.5rem;
+  margin-bottom: 5px;
 }
 
 .headerDesc {
+  color: white;
+  width: 700px;
+  margin: 30px 0;
+  font-size: 14px;
   margin: 20px 0px;
 }
 
 .headerBtn {
-  background-color: #0071c2;
-  color: white;
-  font-weight: 500;
+  width: 200px;
+  padding: 15px 0;
+  text-align: center;
+  margin: 20px 10px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 14px;
+  text-transform: uppercase;
   border: none;
-  padding: 10px;
+  background: #4f2500;
+  color: #fff;
   cursor: pointer;
+  position: relative;
+  overflow: hidden;
 }
 
 .headerSearch {
   height: 30px;
-  background-color: white;
-  border: 3px solid #febb02;
+  background-color: #f0f0f0;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
   display: flex;
   align-items: center;
   justify-content: space-around;
-  padding: 10px 0px;
+  padding: 10px 0;
   border-radius: 5px;
   position: absolute;
   bottom: -25px;
@@ -63,22 +75,23 @@
 }
 
 .headerIcon {
-  color: lightgray;
+  color: darkgrey;
 }
 
 .headerSearchItem {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 30px;
 }
 
 .headerSearchInput {
   border: none;
   outline: none;
+  background-color: #f0f0f0;
 }
 
 .headerSearchText {
-  color: lightgray;
+  color: #2a2a2a;
   cursor: pointer;
 }
 
@@ -95,8 +108,7 @@
   background-color: white;
   color: gray;
   border-radius: 5px;
-  -webkit-box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 0.4);
-  box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 10px -5px rgba(0, 0, 0, 0.4);
 }
 
 .optionItem {
@@ -125,4 +137,10 @@
 
 .optionCounterButton:disabled {
   cursor: not-allowed;
+}
+
+#searchBtn {
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
 }

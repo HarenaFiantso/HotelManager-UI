@@ -69,7 +69,7 @@ const Header = ({ type }) => {
               sint totam quis repellendus eligendi eum impedit voluptatum
               repudiandae libero est ducimus!
             </p>
-            {!user && <button className="headerBtn">Sign in / Register</button>}
+            {!user && <button className="headerBtn"> <span></span> S'authentifier</button>}
             <div className="headerSearch">
               <div className="headerSearchItem">
                 <FontAwesomeIcon icon={faBed} className="headerIcon" />
@@ -175,7 +175,7 @@ const Header = ({ type }) => {
                 )}
               </div>
               <div className="headerSearchItem">
-                <button className="headerBtn" onClick={handleSearch}>
+                <button className="headerSearchBtn" onClick={handleSearch}>
                   Search
                 </button>
               </div>
