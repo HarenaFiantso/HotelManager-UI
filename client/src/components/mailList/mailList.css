@@ -1,30 +1,68 @@
-.mail{
+.contact {
   width: 100%;
-  margin-top: 50px;
-  background-color: #003580;
-  color: white;
+  max-width: 920px;
+  background-color: var(--black);
+  padding: 20px;
+  margin-bottom: 2rem;
+  border-radius: 2rem;
+}
+
+.contact .row {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-  padding: 50px;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
-.mailInputContainer>input{
-  width: 300px;
-  height: 30px;
-  padding: 10px;
-  border: none;
-  margin-right: 10px;
-  border-radius: 5px;
+.contact .row .image {
+  flex: 1;
+  border-radius: 0.5rem;
+  width: 100%;
+  object-fit: cover;
 }
 
-.mailInputContainer>button{
-  height: 50px;
-  background-color: #0071c2;
+.contact .row form {
+  flex: 1 1 45rem;
+  padding: 5rem 2rem;
+  text-align: left;
+}
+
+.contact .row form h3 {
+  font-size: 3rem;
   color: white;
-  font-weight: 500;
-  border: none;
-  border-radius: 5px;
+}
+
+.contact .row form .inputBox {
+  display: flex;
+  align-items: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  background: #010103;
+  border: 0.1rem solid rgba(255, 255, 255, 0.3);
+}
+
+.contact .row form .inputBox span {
+  color: #fff;
+  font-size: 0.5rem;
+  padding-left: 1rem;
+}
+
+.contact .row form .inputBox input {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 14px;
+  color: #fff;
+  text-transform: none;
+  background: none;
+}
+
+.btn {
+  margin-top: 1rem;
+  display: inline-block;
+  padding: 0.9rem 3rem;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 0.5rem;
+  color: #fff;
+  background: var(--gold);
   cursor: pointer;
 }
