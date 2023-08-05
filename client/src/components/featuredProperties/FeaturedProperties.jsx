@@ -1,8 +1,110 @@
+/* import ImageOne from "../../assets/rooms/1.png";
+import ImageTwo from "../../assets/rooms/2.png";
+import ImageThree from "../../assets/rooms/3.png";
+import ImageFour from "../../assets/rooms/4.png";
+import ImageFive from "../../assets/rooms/5.png";
+import ImageSix from "../../assets/rooms/6.png";
+import ImageSeven from "../../assets/rooms/7.png"; */
+
+import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import useFetch from "../../hooks/useFetch";
 import "./featuredProperties.css";
 
 const FeaturedProperties = () => {
-  const { data, loading, error } = useFetch("/hotels?featured=true&limit=4");
+  const { data, loading } = useFetch("/hotels?featured=true&limit=4");
+/*   return (
+    <div className="fp">
+      <div className="fpItem">
+        <img src={ImageOne} alt="" className="fpImg" />
+        <span className="fpName">ETS Hotel</span>
+        <span className="fpCity">Behenjy</span>
+        <span className="fpPrice">À partir de 69.000ar</span>
+        <div className="fpRating">
+          <button>9.6</button>
+          <FontAwesomeIcon icon={faHeart} className="icon" />
+        </div>
+      </div>
+
+      <div className="fpItem">
+        <img src={ImageTwo} alt="" className="fpImg" />
+        <span className="fpName">ETS Hotel</span>
+        <span className="fpCity">Behenjy</span>
+        <span className="fpPrice">À partir de 69.000ar</span>
+        <div className="fpRating">
+          <button>9.6</button>
+          <FontAwesomeIcon icon={faHeart} className="icon" />
+        </div>
+      </div>
+
+      <div className="fpItem">
+        <img src={ImageThree} alt="" className="fpImg" />
+        <span className="fpName">ETS Hotel</span>
+        <span className="fpCity">Behenjy</span>
+        <span className="fpPrice">À partir de 69.000ar</span>
+        <div className="fpRating">
+          <button>9.6</button>
+          <FontAwesomeIcon icon={faHeart} className="icon" />
+        </div>
+      </div>
+
+      <div className="fpItem">
+        <img src={ImageFour} alt="" className="fpImg" />
+        <span className="fpName">ETS Hotel</span>
+        <span className="fpCity">Behenjy</span>
+        <span className="fpPrice">À partir de 69.000ar</span>
+        <div className="fpRating">
+          <button>9.6</button>
+          <FontAwesomeIcon icon={faHeart} className="icon" />
+        </div>
+      </div>
+
+      <div className="fpItem">
+        <img src={ImageFive} alt="" className="fpImg" />
+        <span className="fpName">ETS Hotel</span>
+        <span className="fpCity">Behenjy</span>
+        <span className="fpPrice">À partir de 69.000ar</span>
+        <div className="fpRating">
+          <button>9.6</button>
+          <FontAwesomeIcon icon={faHeart} className="icon" />
+        </div>
+      </div>
+
+      <div className="fpItem">
+        <img src={ImageSix} alt="" className="fpImg" />
+        <span className="fpName">ETS Hotel</span>
+        <span className="fpCity">Behenjy</span>
+        <span className="fpPrice">À partir de 69.000ar</span>
+        <div className="fpRating">
+          <button>9.6</button>
+          <FontAwesomeIcon icon={faHeart} className="icon" />
+        </div>
+      </div>
+
+      <div className="fpItem">
+        <img src={ImageSeven} alt="" className="fpImg" />
+        <span className="fpName">ETS Hotel</span>
+        <span className="fpCity">Behenjy</span>
+        <span className="fpPrice">À partir de 69.000ar</span>
+        <div className="fpRating">
+          <button>9.6</button>
+          <FontAwesomeIcon icon={faHeart} className="icon" />
+        </div>
+      </div>
+
+      <div className="fpItem">
+        <img src={ImageOne} alt="" className="fpImg" />
+        <span className="fpName">ETS Hotel</span>
+        <span className="fpCity">Behenjy</span>
+        <span className="fpPrice">À partir de 69.000ar</span>
+        <div className="fpRating">
+          <button>9.6</button>
+          <FontAwesomeIcon icon={faHeart} className="icon" />
+        </div>
+      </div>
+    </div>
+  ); */
 
   return (
     <div className="fp">
@@ -21,7 +123,7 @@ const FeaturedProperties = () => {
               {item.rating && (
                 <div className="fpRating">
                   <button>{item.rating}</button>
-                  <span>Excellent</span>
+                  <FontAwesomeIcon icon={faHeart} className="icon" />
                 </div>
               )}
             </div>
@@ -29,7 +131,7 @@ const FeaturedProperties = () => {
         </>
       )}
     </div>
-  );
-};
+  )
+  };
 
 export default FeaturedProperties;
