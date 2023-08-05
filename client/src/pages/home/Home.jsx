@@ -13,7 +13,6 @@ function Home() {
       <Navbar />
       <Header />
       <div className="homeContainer">
-
         <About />
         <Featured />
         <h1 className="homeTitle">Browse by property type</h1>
