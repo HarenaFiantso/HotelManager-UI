@@ -34,22 +34,23 @@ const Login = () => {
   return (
     <div className="login">
       <div className="lContainer">
+        <h1>Connectez vous à votre compte</h1>
         <input
           type="text"
-          placeholder="username"
+          placeholder="Nom d'utilisateur"
           id="username"
           onChange={handleChange}
           className="lInput"
         />
         <input
           type="password"
-          placeholder="password"
+          placeholder="Mot de passe"
           id="password"
           onChange={handleChange}
           className="lInput"
         />
         <button disabled={loading} onClick={handleClick} className="lButton">
-          Login
+          Se connecter
         </button>
         {error && <span>{error.message}</span>}
       </div>
