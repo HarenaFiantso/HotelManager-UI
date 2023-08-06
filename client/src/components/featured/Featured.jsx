@@ -1,86 +1,72 @@
 import useFetch from "../../hooks/useFetch";
 import "./featured.css";
+import Antananarivo from "./Antananarivo.jpg";
+import Mahajanga from "./Mahajanga.webp"
+import Toamasina from "./Toamasina.jpg"
+
+function getCityName(cityCode) {
+  switch (cityCode) {
+    case "1":
+      return "Antananarivo";
+    case "2":
+      return "Mahajanga";
+    case "3":
+      return "Toamasina";
+    case "4":
+      return "Fianarantsoa";
+    case "5":
+      return "Toliara";
+    case "6":
+      return "Antsiranana";
+    // Ajoutez d'autres cas ici si nécessaire pour couvrir d'autres codes de ville
+    default:
+      return "Unknown City";
+  }
+}
+
+function getImageForCity(cityName) {
+  switch (cityName) {
+    case "Antananarivo":
+      return Antananarivo;
+    case "Mahajanga":
+      return Mahajanga;
+    case "Toamasina":
+      return Toamasina;
+    case "Fianarantsoa":
+      return Mahajanga;
+    case "Toliara":
+      return Toamasina;
+    case "Antsiranana":
+      return Antananarivo;
+    // Ajoutez d'autres cas ici si nécessaire pour couvrir d'autres noms de ville
+    default:
+      return "default_image_url.jpg";
+  }
+}
 
 function Featured() {
-  const { data, loading } = useFetch("");
+  const { data, loading, error } = useFetch(
+    "http://localhost:8000/api/hotels/countByCity?cities=1,2,3,4,5,6"
+  );
 
   return (
     <div className="featured" id="property">
-      {loading ? (
-        "Loading please wait"
-      ) : (
-        <>
-          <div className="featuredItem">
-            <img
-              src="https://cf.bstatic.com/xdata/images/city/max500/957801.webp?k=a969e39bcd40cdcc21786ba92826063e3cb09bf307bcfeac2aa392b838e9b7a5&o="
-              alt=""
-              className="featuredImg"
-            />
-            <div className="featuredTitles">
-              <h1>Antananarivo</h1>
-              <h2>{data[0]} properties</h2>
-            </div>
-          </div>
+      {loading
+        ? "Loading please wait"
+        : data.map((cityData) => {
+            const cityName = getCityName(cityData.city);
+            const imageUrl = getImageForCity(cityName);
 
-          <div className="featuredItem">
-            <img
-              src="https://cf.bstatic.com/xdata/images/city/max500/690334.webp?k=b99df435f06a15a1568ddd5f55d239507c0156985577681ab91274f917af6dbb&o="
-              alt=""
-              className="featuredImg"
-            />
-            <div className="featuredTitles">
-              <h1>Mahajanga</h1>
-              <h2>{data[1]} properties</h2>
-            </div>
-          </div>
-          <div className="featuredItem">
-            <img
-              src="https://cf.bstatic.com/xdata/images/city/max500/689422.webp?k=2595c93e7e067b9ba95f90713f80ba6e5fa88a66e6e55600bd27a5128808fdf2&o="
-              alt=""
-              className="featuredImg"
-            />
-            <div className="featuredTitles">
-              <h1>Toamasina</h1>
-              <h2>{data[2]} properties</h2>
-            </div>
-          </div>
-
-          <div className="featuredItem">
-            <img
-              src="https://cf.bstatic.com/xdata/images/city/max500/957801.webp?k=a969e39bcd40cdcc21786ba92826063e3cb09bf307bcfeac2aa392b838e9b7a5&o="
-              alt=""
-              className="featuredImg"
-            />
-            <div className="featuredTitles">
-              <h1>Toliara</h1>
-              <h2>{data[3]} properties</h2>
-            </div>
-          </div>
-
-          <div className="featuredItem">
-            <img
-              src="https://cf.bstatic.com/xdata/images/city/max500/690334.webp?k=b99df435f06a15a1568ddd5f55d239507c0156985577681ab91274f917af6dbb&o="
-              alt=""
-              className="featuredImg"
-            />
-            <div className="featuredTitles">
-              <h1>Antsiranana</h1>
-              <h2>{data[4]} properties</h2>
-            </div>
-          </div>
-          <div className="featuredItem">
-            <img
-              src="https://cf.bstatic.com/xdata/images/city/max500/689422.webp?k=2595c93e7e067b9ba95f90713f80ba6e5fa88a66e6e55600bd27a5128808fdf2&o="
-              alt=""
-              className="featuredImg"
-            />
-            <div className="featuredTitles">
-              <h1>Antsirabe</h1>
-              <h2>{data[5]} properties</h2>
-            </div>
-          </div>
-        </>
-      )}
+            return (
+              <div key={cityData.city} className="featuredItem">
+                <img src={imageUrl} alt={cityName} className="featuredImg" />
+                <div className="featuredTitles">
+                  <h1>{cityName}</h1>
+                  <h2>{cityData.count} properties</h2>
+                </div>
+              </div>
+            );
+          })}
     </div>
   );
 }

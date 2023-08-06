@@ -14,7 +14,7 @@ import { verifyAdmin } from "../utils/verifyToken.js";
 
 /* Implémentation des endpoints */
 hotelRouter.get("/", getHotels); /* Testée */
-hotelRouter.get("/:id", getHotel); /* Testée */
+hotelRouter.get("/find/:id", getHotel); /* Testée */
 hotelRouter.get("/countByCity", countByCity); /* Testée */
 hotelRouter.post("/", verifyAdmin, createHotel); /* Testée ilay createHotel */
 hotelRouter.put("/:id", verifyAdmin, updateHotel); /* Testée */

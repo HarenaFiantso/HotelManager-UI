@@ -11,14 +11,18 @@ import roomRouter from "./app/routes/roomRoute.js";
 import userRouter from "./app/routes/userRoute.js";
 
 const app = express();
-app.listen(process.env.expressPORT || 3000, () => {
+app.listen(process.env.expressPORT || 8000, () => {
   connect();
-  console.log(`Server listen on port ${process.env.expressPORT || 3000}`);
+  console.log(`Server listen on port ${process.env.expressPORT || 8000}`);
 });
 
 /* Middlewares, Routers */
+const corsOptions = {
+  origin: "http://localhost:3000",
+  credentials: true, // Enables the Access-Control-Allow-Credentials header
+};
 app.use(express.json());
-app.use(cors());
+app.use(cors(corsOptions));
 
 app.use(cookieParser());
 

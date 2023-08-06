@@ -120,51 +120,228 @@ VALUES ('Credit Card'),
   ('Direct Debit'),
   ('Venmo');
 INSERT INTO city (name)
-VALUES ('Paris'),
-  ('London'),
-  ('New York'),
-  ('Tokyo'),
-  ('Sydney'),
-  ('Berlin'),
-  ('Rome'),
-  ('Dubai'),
-  ('Toronto'),
-  ('Moscow');
+VALUES ('Antananarivo'),
+  ('Mahajanga'),
+  ('Toamasina'),
+  ('Antsiranana'),
+  ('Toliara'),
+  ('Antsirabe');
 INSERT INTO hotel (name, address, is_active, id_city)
-VALUES ('Grand Plaza', '123 Main St, Paris', true, 1),
-  ('Royal Palace', '456 Park Ave, London', true, 2),
+VALUES ('Grand Plaza', '123 Main St, ', true, 1),
+  ('Royal Palace', '456 Park Ave, London', true, 1),
+  (
+    'Metropolitan',
+    '789 Broadway, New Yorksdfsd',
+    true,
+    1
+  ),
+  ('Sakura Inn', '101 Sakura Dori, sfsd', true, 1),
+  ('Seaside Resort', '50 Beach Rd, fsdfy', true, 1),
+  (
+    'City Center Hotel',
+    '15 Hauptstrasse, Berlinsdqf',
+    true,
+    1
+  ),
+  ('Eternal City Inn', '30 Via Roma, Romeqsdf', true, 1),
+  (
+    'Desert Oasis Hotel',
+    '500 Sheikh Zayed Rd, Dubaisdqf',
+    true,
+    1
+  ),
+  (
+    'Lakeview Lodge',
+    '100 Lakeshore Blvd, Torontoqsdf',
+    true,
+    1
+  ),
+  (
+    'Kremlin Hotel',
+    '10 Red Square, Moscowsdqfq',
+    true,
+    1
+  ),
+('Grand Plaza', '123 Main St, Paris', true, 2),
+  ('Royal Palace', '456 Park Ave, Londonsdfqs', true, 2),
+  (
+    'Metropolitan',
+    '789 Broadway, New Yorksdfqs',
+    true,
+    2
+  ),
+  ('Sakura Inn', '101 Sakura Dori, Tokyo zearz', true, 2),
+  ('Seaside Resort', '50 Beach Rd, Sydneymlmlk', true, 2),
+  (
+    'City Center Hotel',
+    '15 Hauptstrasse, Berlinikljk',
+    true,
+    2
+  ),
+  ('Eternal City Inn', '30 Via Roma, Romekjhjlkhlkj', true, 2),
+  (
+    'Desert Oasis Hotel',
+    '500 Sheikh Zayed Rd, Dubaikjlkmjmlk',
+    true,
+    2
+  ),
+  (
+    'Lakeview Lodge',
+    '100 Lakeshore Blvd, Torontokjklmjmk',
+    true,
+    2
+  ),
+  (
+    'Kremlin Hotel',
+    '10 Red Square, Moscowkjlmkjml',
+    true,
+    2
+  ),
+  ('Grand Plaza', '123 Main St, Paristuyuyi', true, 3),
+  ('Royal Palace', '456 Park Ave, London iuoiu', true, 3),
+  (
+    'Metropolitan',
+    '789 Broadway, New York ioupiupoi',
+    true,
+    3
+  ),
+  ('Sakura Inn', '101 Sakura Dori, Tokyofgdhd', true, 3),
+  ('Seaside Resort', '50 Beach Rd, Sydney iouopiuo', true, 3),
+  (
+    'City Center Hotel uiyoiuyo',
+    '15 Hauptstrasse, Berlin',
+    true,
+    3
+  ),
+  ('Eternal City Inn', '30 Via Roma, Rome oiuopiupoi', true, 3),
+  (
+    'Desert Oasis Hotel',
+    '500 Sheikh Zayed Rd, Dubai oiuoipuopi',
+    true,
+    3
+  ),
+  (
+    'Lakeview Lodge',
+    '100 Lakeshore Blvd, Toronto lmjlkmjmlk',
+    true,
+    3
+  ),
+  (
+    'Kremlin Hotel',
+    '10 Red Square, Moscow lkjmlkjlmk',
+    true,
+    3
+  ),
+  ('Grand Plaza', '123 Main St, Paris kjlhmlkjmok', true, 4),
+  ('Royal Palace', '456 Park Ave, London lkjklmj', true, 4),
+  (
+    'Metropolitan',
+    '789 Broadway, New York jklhlkjh',
+    true,
+    4
+  ),
+  ('Sakura Inn', '101 Sakura Dori, Tokyo jkhklj', true, 4),
+  ('Seaside Resort', '50 Beach Rd, Sydne nkjlnjy', true, 4),
+  (
+    'City Center Hotel',
+    '15 Hauptstrasse, Berlkljmlkin',
+    true,
+    4
+  ),
+  ('Eternal City Inn', '30 Via Roma, Rokljmlkjme', true, 4),
+  (
+    'Desert Oasis Hotel',
+    '500 Sheikh Zayed Rd, Dubkljmlkjai',
+    true,
+    4
+  ),
+  (
+    'Lakeview Lodge',
+    '100 Lakeshore Blvd, Torlkjmlkjonto',
+    true,
+    4
+  ),
+  (
+    'Kremlin Hotel',
+    '10 Red Square, Moscklmjlkjow',
+    true,
+    4
+  ),
+  ('Grand Plaza', '123 Main St, Parilkjklms', true, 1),
+  ('Royal Palace', '456 Park Ave, Londlkjmlkmjon', true, 1),
+  (
+    'Metropolitan',
+    '789 Broadway, New Yorkljmlkk',
+    true,
+    1
+  ),
+  ('Sakura Inn', '101 Sakura Dori, Tokkljnjlyo', true, 5),
+  ('Seaside Resort', '50 Beach Rd, Sydnlljlkjey', true, 5),
+  (
+    'City Center Hotel',
+    '15 Hauptstrasse, Berljklkhkjin',
+    true,
+    5
+  ),
+  ('Eternal City Inn', '30 Via Roma, Rojhlkjhlme', true, 5),
+  (
+    'Desert Oasis Hotel',
+    '500 Sheikh Zayed Rd, Dukjhlkjhbai',
+    true,
+    5
+  ),
+  (
+    'Lakeview Lodge',
+    '100 Lakeshore Blvd, Toronjkhlkjhlkjto',
+    true,
+    5
+  ),
+  (
+    'Kremlin Hotel',
+    '10 Red Square, Moscoljlkjhkljhw',
+    true,
+    5
+  ),
+  ('Grand Plaza', '123 Main St, Palkjhkjlris', true, 6),
+  ('Royal Palace', '456 Park Ave, Loubilubndon', true, 6),
   (
     'Metropolitan',
     '789 Broadway, New York',
     true,
-    3
+    6
   ),
-  ('Sakura Inn', '101 Sakura Dori, Tokyo', true, 4),
-  ('Seaside Resort', '50 Beach Rd, Sydney', true, 5),
+  ('Sakura Inn', '101 Sakura Dori, Tokyjkhluhno', true, 6),
+  ('Seaside Resort', '50 Beach Rd, Sydniinkjney', true, 6),
   (
     'City Center Hotel',
-    '15 Hauptstrasse, Berlin',
+    '15 Hauptstrasse, Berlikjnkjn',
     true,
     6
   ),
-  ('Eternal City Inn', '30 Via Roma, Rome', true, 7),
+  ('Eternal City Inn', '30 Via Roma, Rojhgkjhme', true, 6),
   (
     'Desert Oasis Hotel',
-    '500 Sheikh Zayed Rd, Dubai',
+    '500 Sheikh Zayed Rd, Dubkhlkuhlkai',
     true,
-    8
+    6
   ),
   (
     'Lakeview Lodge',
-    '100 Lakeshore Blvd, Toronto',
+    '100 Lakeshore Blvd, Torohjklhjlkhnto',
     true,
-    9
+    6
   ),
   (
     'Kremlin Hotel',
-    '10 Red Square, Moscow',
+    '10 Red Square, Moskjlhjllhkcow',
     true,
-    10
+    6
+  ),
+  (
+    'Kremlin Hotel',
+    '10 Red Square, Mosjlkhjlkhcow',
+    true,
+    6
   );
 INSERT INTO conference_room (capacity, price_per_hour, id_hotel)
 VALUES (50, 100.00, 1),
