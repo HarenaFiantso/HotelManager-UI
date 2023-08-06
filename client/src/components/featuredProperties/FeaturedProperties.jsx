@@ -8,13 +8,35 @@ import ImageSeven from "../../assets/rooms/7.png"; */
 
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Image from "./room.jpg"
+import Image from "./room.jpg";
 
 import useFetch from "../../hooks/useFetch";
 import "./featuredProperties.css";
 
+function getCityName(cityCode) {
+  switch (cityCode) {
+    case "1":
+      return "Antananarivo";
+    case "2":
+      return "Mahajanga";
+    case "3":
+      return "Toamasina";
+    case "4":
+      return "Fianarantsoa";
+    case "5":
+      return "Toliara";
+    case "6":
+      return "Antsiranana";
+    // Ajoutez d'autres cas ici si nécessaire pour couvrir d'autres codes de ville
+    default:
+      return "Unknown City";
+  }
+}
+
 const FeaturedProperties = () => {
-  const { data, loading, error } = useFetch(`http://localhost:8000/api/hotels?limit=4`);
+  const { data, loading, error } = useFetch(
+    `http://localhost:8000/api/hotels?featured=true&limit=4`
+  );
   console.log(data);
   /*   return (
     <div className="fp">
@@ -114,13 +136,15 @@ const FeaturedProperties = () => {
         "Loading"
       ) : (
         <>
-          {data.map((item) => (
-            <div className="fpItem" key={item._id}>
+          {data.map((item) => {
+            const cityName = getCityName(item.id_city);
+            return (
+              <div className="fpItem" key={item._id}>
               <img src={Image} alt="" className="fpImg" />
               <span className="fpName">{item.name}</span>
-              <span className="fpCity">{item.city}</span>
+              <span className="fpCity">{cityName}</span>
               <span className="fpPrice">
-                Starting from ${item.cheapestPrice}
+                À partir de {item.cheapestprice} Ar
               </span>
               {item.rating && (
                 <div className="fpRating">
@@ -129,7 +153,8 @@ const FeaturedProperties = () => {
                 </div>
               )}
             </div>
-          ))}
+            );
+          })}
         </>
       )}
     </div>

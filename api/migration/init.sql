@@ -29,11 +29,15 @@ CREATE TABLE city (
     name VARCHAR(255) NOT NULL
 );
 CREATE TABLE hotel (
-    id SERIAL PRIMARY KEY,
-    name VARCHAR(255) NOT NULL,
-    address TEXT UNIQUE,
-    is_active BOOLEAN,
-    id_city INT REFERENCES city(id) NOT NULL
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(255) NOT NULL,
+  address TEXT NOT NULL,
+  id_city VARCHAR(255) NOT NULL,
+  photos TEXT[],
+  description TEXT NOT NULL,
+  rating NUMERIC CHECK (rating >= 0 AND rating <= 5),
+  cheapestPrice NUMERIC NOT NULL,
+  featured BOOLEAN DEFAULT false
 );
 CREATE TABLE rating (
     id SERIAL PRIMARY KEY,
