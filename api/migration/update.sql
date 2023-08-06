@@ -21,3 +21,6 @@ ADD COLUMN IF NOT EXISTS description text default 'Lorem ipsum dolor sit amet co
     avec piscine';
 
 ALTER TABLE room ADD COLUMN IF NOT EXISTS unavailable_dates DATE[];
+ALTER TABLE hotel ADD COLUMN cheapest_price NUMERIC(20, 2);
+ALTER TABLE hotel ADD COLUMN featured BOOLEAN DEFAULT true;
+
