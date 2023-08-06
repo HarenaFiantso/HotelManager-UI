@@ -5,10 +5,10 @@ import cookieParser from "cookie-parser";
 import { connect } from "./databaseConnection.js";
 
 /* Importation des modules de gestion des routes */
-
 import hotelRouter from "./app/routes/hotelRoute.js";
 import authRouter from "./app/routes/authRoute.js";
 import roomRouter from "./app/routes/roomRoute.js";
+import userRouter from "./app/routes/userRoute.js";
 
 const app = express();
 app.listen(process.env.expressPORT || 3000, () => {

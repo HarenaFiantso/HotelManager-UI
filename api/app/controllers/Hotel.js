@@ -1,4 +1,15 @@
 import Hotel from "../models/hotelModel.js";
+import { pool } from "../../databaseConnection.js";
+
+export const getHotels = async (req, res, next) => {
+  try {
+    const hotels = await Hotel.getHotels();
+    res.status(200).json(hotels);
+    console.log("Getting Hotel successfully.");
+  } catch (err) {
+    next(err);
+  }
+};
 
 export const createHotel = async (req, res, next) => {
   const newHotel = new Hotel(req.body);
@@ -11,25 +22,22 @@ export const createHotel = async (req, res, next) => {
   }
 };
 
-export const updateHotel = async (req, res, next) => {
-  try {
-    const hotel = await Hotel.findById(req.params.id);
-
-    if (!hotel) {
-      return res.status(404).json({ message: "Hotel not found." });
+export const updateHotel = (req, res) => {
+  const id = parseInt(req.params.id);
+  const { name, address, is_active, id_city } = req.body;
+  pool.query(
+    "UPDATE hotel SET name=$1, address=$2, is_active=$3, id_city=$4 WHERE id=$5 RETURNING *",
+    [name, address, is_active, id_city, id],
+    (error, result) => {
+      if (error) {
+        res
+          .status(500)
+          .json({ error: "An error occured while updating the hotel." });
+      } else {
+        res.status(200).send("Updated successfully.");
+      }
     }
-
-    hotel.name = req.body.name;
-    hotel.address = req.body.address;
-    hotel.is_active = req.body.is_active;
-    hotel.id_city = req.body.id_city;
-
-    const updatedHotel = await hotel.update();
-
-    res.status(200).json(updatedHotel);
-  } catch (err) {
-    next(err);
-  }
+  );
 };
 
 export const deleteHotel = async (req, res, next) => {
@@ -55,21 +63,17 @@ export const getHotel = async (req, res, next) => {
   }
 };
 
-export const getHotels = async (req, res, next) => {
-  const { min, max, ...others } = req.query;
-  try {
-    const hotels = await Hotel.findByCheapestPrice(min, max);
-    res.status(200).json(hotels);
-  } catch (err) {
-    next(err);
-  }
-};
-
 export const countByCity = async (req, res, next) => {
-  const cities = req.query.cities.split(",");
   try {
+    const cities = req.query.cities;
+    if (!cities) {
+      return res.status(400).json({ message: "Cities parameter is missing." });
+    }
+
+    const citiesArray = cities.split(",");
+
     const list = await Promise.all(
-      cities.map(async (city) => {
+      citiesArray.map(async (city) => {
         const hotelsCount = await Hotel.countByCity(city);
         return { city, count: hotelsCount };
       })

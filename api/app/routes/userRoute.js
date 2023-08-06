@@ -2,16 +2,18 @@
 import express from "express";
 const userRouter = express.Router();
 import {
+  createUser,
+  deleteUser,
+  getUser,
   getUsers,
-  getUsersById,
-  removeUsers,
-  updateUsers,
+  updateUser,
 } from "../controllers/User.js";
 
 /* Implémentation des endpoints */
 userRouter.get("/", getUsers);
-userRouter.get("/:id", getUsersById);
-userRouter.put("/:id", updateUsers);
-userRouter.delete("/:id", removeUsers);
+userRouter.get("/:id", getUser);
+userRouter.get("/", createUser);
+userRouter.put("/:id", updateUser);
+userRouter.delete("/:id", deleteUser);
 
-export default hotelRouter;
+export default userRouter;
