@@ -1,3 +1,5 @@
+import { pool } from "../../databaseConnection.js";
+
 class User {
   constructor(data) {
     this.username = data.username;

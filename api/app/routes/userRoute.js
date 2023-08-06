@@ -8,12 +8,12 @@ import {
   getUsers,
   updateUser,
 } from "../controllers/User.js";
+import { verifyAdmin, verifyUser } from "../utils/verifyToken.js";
 
 /* Implémentation des endpoints */
-userRouter.get("/", getUsers);
-userRouter.get("/:id", getUser);
-userRouter.get("/", createUser);
-userRouter.put("/:id", updateUser);
-userRouter.delete("/:id", deleteUser);
+userRouter.get("/", verifyAdmin, getUsers); /* Testée */
+userRouter.get("/:id", verifyUser, getUser); /* Testée */
+userRouter.put("/:id", verifyUser, updateUser); /* Testée */
+userRouter.delete("/:id", deleteUser); /* Testée */
 
 export default userRouter;

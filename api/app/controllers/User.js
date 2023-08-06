@@ -21,9 +21,13 @@ export const updateUser = async (req, res, next) => {
 };
 
 export const deleteUser = async (req, res, next) => {
+  const userId = parseInt(req.params.id); // Convert id to integer if needed
+
   try {
-    await User.deleteUser(req.params.id);
-    res.status(200).json("User has been deleted.");
+    // Delete the user from the database using the deleteUser method
+    await User.deleteUser(userId);
+
+    res.status(200).json('User has been deleted.');
   } catch (err) {
     next(err);
   }
