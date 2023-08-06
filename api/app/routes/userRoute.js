@@ -11,7 +11,7 @@ import {
 import { verifyAdmin, verifyUser } from "../utils/verifyToken.js";
 
 /* Implémentation des endpoints */
-userRouter.get("/", verifyAdmin, getUsers); /* Testée */
+userRouter.get("/", getUsers); /* Testée */
 userRouter.get("/:id", verifyUser, getUser); /* Testée */
 userRouter.put("/:id", verifyUser, updateUser); /* Testée */
 userRouter.delete("/:id", deleteUser); /* Testée */
