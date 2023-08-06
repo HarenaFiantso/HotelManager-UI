@@ -14,18 +14,18 @@ const About = () => {
 
         <div className="about__data">
           <p className="about__description">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum
-            beatae est incidunt ex fuga nihil. Molestiae sed quas, eaque
-            exercitationem sunt excepturi enim expedita dolorem reiciendis quod,
-            id ut cum. Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-            Voluptatum beatae est incidunt ex fuga nihil. Molestiae sed quas,
-            eaque exercitationem sunt excepturi enim expedita dolorem reiciendis
-            quod, id ut cum.
+            DreamHotel est une plateforme de gestion d'hôtel complète et
+            intuitive conçue pour optimiser vos opérations hôtelières. Gérez
+            facilement toutes les facettes de votre établissement, de la
+            réservation en ligne à la gestion des tarifs et des promotions.
+            Offrez une expérience exceptionnelle à vos clients tout en gardant
+            le contrôle de votre hôtel où que vous soyez. Faites de la gestion
+            de votre hôtel une expérience agréable et réussie avec DreamHotel
           </p>
 
           <div className="about__buttons">
             <a href="#contact" className="button button--flex">
-              Contactez-nous <FontAwesomeIcon icon={faPhone}/>
+              Contactez-nous <FontAwesomeIcon icon={faPhone} />
             </a>
           </div>
         </div>

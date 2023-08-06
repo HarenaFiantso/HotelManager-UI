@@ -18,7 +18,7 @@ function List() {
   const [max, setMax] = useState(undefined);
 
   const { data, loading, error, reFetch } = useFetch(
-    `/hotels?city=${destination}&min=${min || 0}&max=${max || 999}`
+    `http://localhost:8000/api/hotels?city=${destination}&min=${min || 0}&max=${max || 999}`
   );
 
   const handleClick = () => {
@@ -28,21 +28,21 @@ function List() {
   return (
     <div>
       <Navbar />
-      <Header type="list" />
+      <h1 className="title">Voici la liste des hotels</h1>
       <div className="listContainer">
         <div className="listWrapper">
           <div className="listSearch">
-            <h1 className="lsTitle">Search</h1>
+            <h1 className="lsTitle">Chercher</h1>
             <div className="lsItem">
               <label>Destination</label>
               <input placeholder={destination} type="text" />
             </div>
             <div className="lsItem">
-              <label>Check-in Date</label>
+              <label>Choisir les dates de séjour</label>
               <span onClick={() => setOpenDate(!openDate)}>{`${format(
                 dates[0].startDate,
                 "MM/dd/yyyy"
-              )} to ${format(dates[0].endDate, "MM/dd/yyyy")}`}</span>
+              )} À ${format(dates[0].endDate, "MM/dd/yyyy")}`}</span>
               {openDate && (
                 <DateRange
                   onChange={(item) => setDates([item.selection])}
@@ -56,7 +56,7 @@ function List() {
               <div className="lsOptions">
                 <div className="lsOptionItem">
                   <span className="lsOptionText">
-                    Min price <small>per night</small>
+                    Prix min <small>chaque nuit</small>
                   </span>
                   <input
                     type="number"
@@ -66,7 +66,7 @@ function List() {
                 </div>
                 <div className="lsOptionItem">
                   <span className="lsOptionText">
-                    Max price <small>per night</small>
+                    Prix max <small>chaque nuit</small>
                   </span>
                   <input
                     type="number"
@@ -75,7 +75,7 @@ function List() {
                   />
                 </div>
                 <div className="lsOptionItem">
-                  <span className="lsOptionText">Adult</span>
+                  <span className="lsOptionText">Adulte</span>
                   <input
                     type="number"
                     min={1}
@@ -84,7 +84,7 @@ function List() {
                   />
                 </div>
                 <div className="lsOptionItem">
-                  <span className="lsOptionText">Children</span>
+                  <span className="lsOptionText">Enfant</span>
                   <input
                     type="number"
                     min={0}
@@ -93,7 +93,7 @@ function List() {
                   />
                 </div>
                 <div className="lsOptionItem">
-                  <span className="lsOptionText">Room</span>
+                  <span className="lsOptionText">Chambre</span>
                   <input
                     type="number"
                     min={1}
@@ -103,7 +103,7 @@ function List() {
                 </div>
               </div>
             </div>
-            <button onClick={handleClick}>Search</button>
+            <button onClick={handleClick}>Chercher</button>
           </div>
           <div className="listResult">
             {loading ? (

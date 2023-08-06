@@ -1,7 +1,7 @@
 .searchItem {
-  border: 1px solid lightgray;
-  padding: 10px;
-  border-radius: 5px;
+  border: 0.1rem solid rgba(0, 0, 0, 0.2);
+  padding: 5px;
+  border-radius: 0.5rem;
   display: flex;
   justify-content: space-between;
   gap: 20px;
@@ -19,91 +19,91 @@
   flex-direction: column;
   gap: 10px;
   flex: 2;
+  text-transform: none;
 }
 
 .siTitle {
   font-size: 20px;
-  color: #0071c2;
-}
-
-.siDistance {
-  font-size: 12px;
+  color: var(--light-color);
 }
 
 .siTaxiOp {
   font-size: 12px;
-  background-color: #008009;
+  font-weight: bold;
+  background-color: var(--puce);
   color: white;
   width: max-content;
-  padding: 3px;
+  padding: 3px 10px;
   border-radius: 5px;
 }
 
-.siSubtitle{
+.siSubtitle {
   font-size: 12px;
   font-weight: bold;
+  text-transform: none;
 }
 
-.siFeatures{
+.siFeatures {
   font-size: 12px;
-}
-
-.siCancelOp{
-  font-size: 12px;
-  color: #008009;
-  font-weight: bold;
-}
-
-.siCancelOpSubtitle{
-  font-size: 12px;
-  color: #008009;
 }
 
 .siDetails {
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: space-between
+  justify-content: space-between;
 }
 
-.siRating{
+.siRating {
   display: flex;
-  justify-content: space-between
+  justify-content: flex-end;
 }
 
-.siRating>span{
+.siRating > span {
+  font-size: 12px;
   font-weight: 500;
 }
-.siRating>button{
- background-color: #003580;
- color: white;
- padding: 5px;
- font-weight: bold;
- border: none;
+.siRating > button {
+  color: white;
+  font-weight: bold;
+  border: none;
+  background-color: var(--gold);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: bold;
 }
 
-.siDetailTexts{
+.siDetailTexts {
   text-align: right;
   display: flex;
   flex-direction: column;
   gap: 5px;
 }
 
-.siPrice{
+.siPrice {
   font-size: 24px;
 }
 
-.siTaxOp{
+.siTaxOp {
   font-size: 12px;
   color: gray;
 }
 
-.siCheckButton{
-  background-color: #0071c2;
-  color: white;
-  font-weight: bold;
-  padding: 10px 5px;
+.siCheckButton {
+  background-color: var(--sand-Dollar);
+  box-shadow: var(--box-shadow);
+  color: black;
   border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: bold;
   cursor: pointer;
-  border-radius: 5px;
+  transition: all .5s ease;
+}
+
+.siCheckButton:hover {
+  background-color: var(--puce);
+  box-shadow: var(--box-shadow);
+  color: white;
 }
