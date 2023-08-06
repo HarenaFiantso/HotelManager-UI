@@ -7,7 +7,7 @@ import {
   getRooms,
   updateRoom,
   updateRoomAvailability,
-} from "../controllers/room.js";
+} from "../controllers/Room.js";
 import { verifyAdmin } from "../utils/verifyToken.js";
 
 roomRouter.get("/", getRooms);
