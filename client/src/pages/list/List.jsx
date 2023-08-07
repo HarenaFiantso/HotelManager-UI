@@ -10,8 +10,26 @@ import { useFetch } from "use-http";
 
 function List() {
   const location = useLocation();
-  const [destination, setDestination] = useState(location.state.destination);
-  const [dates, setDates] = useState(location.state.dates);
+
+  let customDates;
+  let customDestination;
+
+  if(location.state === null){
+    customDates = [
+      {
+        startDate: new Date(),
+        endDate: new Date(),
+        key: "selection",
+      }
+    ];
+    customDestination = "";
+  }else {
+    customDestination = location.state.destination;
+    customDates = location.state.dates
+  }
+
+  const [destination, setDestination] = useState(customDestination);
+  const [dates, setDates] = useState(customDates);
   const [openDate, setOpenDate] = useState(false);
   const [min, setMin] = useState(undefined);
   const [max, setMax] = useState(undefined);
