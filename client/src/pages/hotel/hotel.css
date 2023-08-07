@@ -1,8 +1,16 @@
 .hotelContainer {
+  margin-top: 10rem !important;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 20px;
+}
+
+.sidebarWrapper {
+  width: 10%; /* Ajustez la largeur du Sidebar selon vos besoins */
+  padding: 20px;
+  border-right: 1px solid #ccc;
+  background-color: #f4f4f4;
 }
 
 .hotelWrapper {
@@ -15,36 +23,43 @@
 }
 
 .bookNow {
+  background-color: var(--sand-Dollar);
+  box-shadow: var(--box-shadow);
+  color: black;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all .5s ease;
   position: absolute;
   top: 10px;
   right: 0;
-  border: none;
   padding: 10px 20px;
-  background-color: #0071c2;
-  color: white;
-  font-weight: bold;
-  border-radius: 5px;
-  cursor: pointer;
 }
 
 .hotelTitle {
   font-size: 24px;
+  font-weight: bold;
+  color: var(--light-color);
 }
 
 .hotelAddress {
-  font-size: 12px;
+  font-size: 14px;
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
 .hotelDistance {
-  color: #0071c2;
+  font-size: 14px;
+  color: var(--puce);
   font-weight: 500;
 }
 
 .hotelPriceHighlight {
-  color: #008009;
+  font-size: 14px;
+  color: var(--burnt-Orange);
   font-weight: 500;
 }
 
@@ -81,8 +96,9 @@
 }
 
 .hotelDetailsPrice {
+  margin-bottom: 3rem;
   flex: 1;
-  background-color: #ebf3ff;
+  background-color: var(--sand-Dollar);
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -91,7 +107,7 @@
 
 .hotelDetailsPrice > h1 {
   font-size: 18px;
-  color: #555;
+  color: var(--light-color);
 }
 .hotelDetailsPrice > span {
   font-size: 14px;
@@ -100,13 +116,15 @@
   font-weight: 300;
 }
 .hotelDetailsPrice > button {
-  border: none;
-  padding: 10px 20px;
-  background-color: #0071c2;
+  background-color: var(--puce);
+  box-shadow: var(--box-shadow);
   color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
   font-weight: bold;
   cursor: pointer;
-  border-radius: 5px;
+  transition: all .5s ease;
 }
 
 .slider{
@@ -149,3 +167,14 @@
   color: lightgray;
   cursor: pointer;
 }
+
+.hotelContent {
+  flex: 1;
+  padding: 20px;
+}
+
+/* ... (votre style global existant) */
+
+
+/* ... (votre style global existant) */
+
