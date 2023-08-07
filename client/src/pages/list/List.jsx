@@ -97,7 +97,7 @@ function List() {
               data.length === 0 ? <h1>Aucun hôtel ne se trouve dans la destination recherchée</h1> :
                 data.map(hotel => {
                   return (
-                    <SearchItem item={hotel} key={hotel.id} />
+                    <SearchItem item={hotel} key={hotel.id} start={dates[0].startDate} end={dates[0].endDate}/>
                   )
                 })
             }

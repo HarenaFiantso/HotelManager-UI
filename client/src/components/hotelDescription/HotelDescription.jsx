@@ -7,18 +7,17 @@ const HotelDescription = ({ item }) => {
     <div className="searchItem">
       <img src={item.photo} alt="" className="siImg" />
       <div className="siDesc">
-        <h1 className="siTitle">{item.name}</h1>
-        <span className="siFeatures">{item.address}</span>
+        <h1 className="siTitle">{item.room_type_name} {item.id}</h1>
+        <span>{ item.options.map(option => `${option.name} -`) }</span>
+        <p>{item.description}</p>
       </div>
       <div className="siDetails">
-        {item.total_rate && (
           <div className="siRating">
-            <button>{item.total_rate}</button>
+            <button>{item.total_price} $</button>
           </div>
-        )}
         <div className="siDetailTexts">
           <Link to={`/hotels/${item.id}`}>
-            <button className="siCheckButton">Voir les détails</button>
+            <button className="siCheckButton">Réserver</button>
           </Link>
         </div>
       </div>
