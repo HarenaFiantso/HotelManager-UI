@@ -2,27 +2,62 @@ import "./list.css";
 import Navbar from "../../components/navbar/Navbar";
 import Header from "../../components/header/Header";
 import { useLocation } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { format } from "date-fns";
 import { DateRange } from "react-date-range";
 import SearchItem from "../../components/searchItem/SearchItem";
-import useFetch from "../../hooks/useFetch";
+import { useFetch } from "use-http";
 
 function List() {
   const location = useLocation();
-  const [destination, setDestination] = useState(location.state.destination);
-  const [dates, setDates] = useState(location.state.dates);
+
+  let customDates;
+  let customDestination;
+
+  if(location.state === null){
+    customDates = [
+      {
+        startDate: new Date(),
+        endDate: new Date(),
+        key: "selection",
+      }
+    ];
+    customDestination = "";
+  }else {
+    customDestination = location.state.destination;
+    customDates = location.state.dates
+  }
+
+  const [destination, setDestination] = useState(customDestination);
+  const [dates, setDates] = useState(customDates);
   const [openDate, setOpenDate] = useState(false);
-  const [options, setOptions] = useState(location.state.options);
   const [min, setMin] = useState(undefined);
   const [max, setMax] = useState(undefined);
+  const [data, setData] = useState([]);
+  const { get, post, response, error, loading } = useFetch('http://localhost:8000');
 
-  const { data, loading, error, reFetch } = useFetch(
-    `http://localhost:8000/api/hotels?city=${destination}&min=${min || 0}&max=${max || 999}`
-  );
+  async function searchHotels() {
+    let hotels = [];
+    if (destination == "") {
+      hotels = await get('/hotels/rate');
+    } else {
+      hotels = await post('/hotels/available',
+        {
+          city_name: destination,
+          start_date: dates[0].startDate,
+          end_date: dates[0].endDate
+        }
+      );
+    }
+
+    if(response.ok) setData(hotels);
+  }
+
+  useEffect(() => { searchHotels() }, [])
+
 
   const handleClick = () => {
-    reFetch();
+    searchHotels();
   };
 
   return (
@@ -35,7 +70,9 @@ function List() {
             <h1 className="lsTitle">Chercher</h1>
             <div className="lsItem">
               <label>Destination</label>
-              <input placeholder={destination} type="text" />
+              <input placeholder={destination} type="text" onChange={
+                (e) => setDestination(e.target.value)
+              } />
             </div>
             <div className="lsItem">
               <label>Choisir les dates de séjour</label>
@@ -51,70 +88,19 @@ function List() {
                 />
               )}
             </div>
-            <div className="lsItem">
-              <label>Options</label>
-              <div className="lsOptions">
-                <div className="lsOptionItem">
-                  <span className="lsOptionText">
-                    Prix min <small>chaque nuit</small>
-                  </span>
-                  <input
-                    type="number"
-                    onChange={(e) => setMin(e.target.value)}
-                    className="lsOptionInput"
-                  />
-                </div>
-                <div className="lsOptionItem">
-                  <span className="lsOptionText">
-                    Prix max <small>chaque nuit</small>
-                  </span>
-                  <input
-                    type="number"
-                    onChange={(e) => setMax(e.target.value)}
-                    className="lsOptionInput"
-                  />
-                </div>
-                <div className="lsOptionItem">
-                  <span className="lsOptionText">Adulte</span>
-                  <input
-                    type="number"
-                    min={1}
-                    className="lsOptionInput"
-                    placeholder={options.adult}
-                  />
-                </div>
-                <div className="lsOptionItem">
-                  <span className="lsOptionText">Enfant</span>
-                  <input
-                    type="number"
-                    min={0}
-                    className="lsOptionInput"
-                    placeholder={options.children}
-                  />
-                </div>
-                <div className="lsOptionItem">
-                  <span className="lsOptionText">Chambre</span>
-                  <input
-                    type="number"
-                    min={1}
-                    className="lsOptionInput"
-                    placeholder={options.room}
-                  />
-                </div>
-              </div>
-            </div>
             <button onClick={handleClick}>Chercher</button>
           </div>
           <div className="listResult">
-            {loading ? (
-              "loading"
-            ) : (
-              <>
-                {data.map((item) => (
-                  <SearchItem item={item} key={item._id} />
-                ))}
-              </>
-            )}
+            {loading && "Loading"}
+            {error && "error"}
+            {
+              data.length === 0 ? <h1>Aucun hôtel ne se trouve dans la destination recherchée</h1> :
+                data.map(hotel => {
+                  return (
+                    <SearchItem item={hotel} key={hotel.id} />
+                  )
+                })
+            }
           </div>
         </div>
       </div>
