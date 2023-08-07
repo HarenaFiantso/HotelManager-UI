@@ -1,15 +1,87 @@
 import "./hotel.css";
 import Navbar from "../../components/navbar/Navbar";
-/* import { useLocation } from "react-router-dom";
-import { useState, useEffect } from "react"; */
+import { useLocation } from "react-router-dom";
+import { useState, useEffect } from "react";
 import SearchItem from "../../components/searchItem/SearchItem";
 import Sidebar from "../../components/sidebar/Sidebar";
 import HotelDescription from "../../components/hotelDescription/HotelDescription";
-/* import { useFetch } from "use-http"; */
+import { useFetch } from "use-http";
 
 function Hotel() {
-  /* const location = useLocation();
+  const location = useLocation();
+  const id = location.pathname.split('/')[2];
+  let startDate = new Date();
+  let endDate = new Date();
+  if(location.state){
+    startDate = location.state.startDate;
+    endDate = location.state.endDate;
+  }
+  const [data, setData] = useState([]);
+  const [filterMode, setFilterMode] = useState(false);
+  const [options, setOptions] = useState([]);
+  const [searchParams, setSearchParams] = useState([]);
+  const { get, post, response, error, loading } = useFetch('http://localhost:8000');
 
+  async function getAvailableRooms() {
+    const initalRooms = await get(
+      `/room/unserved_room/${id}?start_date=${startDate.toISOString()}&end_date=${endDate.toISOString()}
+      `);
+    const rooms = await Promise.all(initalRooms.map(async room => {
+      const options = await get(`/room_option/room/${room.id}`);
+      room.options = options;
+      return room;
+    }))
+
+    if (response.ok) setData(rooms);
+  }
+
+  async function getOptionSet() {
+    const optionSet = await get('/room_option')
+
+    if (response.ok) setOptions(optionSet);
+  }
+
+  async function launchSearch() {
+    if (searchParams.length === 0) {
+      alert('Vous avez lancé une recherche vide');
+    } else {
+      setFilterMode(true);
+      const newRooms = [...data].filter(room => {
+        let sets = [];
+        for (let i = 0; i < searchParams.length; i++) {
+          const param = searchParams[i];
+
+          const contains = room.options.some(obj => obj.id === param.id && obj.name === param.name);
+          sets.push(contains);
+        }
+        if (!sets.includes(false)) {
+          return room;
+        }
+      })
+      setData(newRooms);
+    }
+  }
+
+  const newParam = (value, data) => {
+    if (value) {
+      setSearchParams([...searchParams, data]);
+    } else {
+      setSearchParams([...searchParams].filter(
+        param => param.id !== data.id
+      ));
+    }
+  }
+
+  useEffect(() => { getAvailableRooms(); getOptionSet() }, []);
+
+  function terminateSearch(e){
+    e.stopPropagation();
+    setFilterMode(false);
+    setSearchParams([]);
+    getAvailableRooms();
+  }
+
+  /*
   let customDates;
   let customDestination;
 
@@ -62,22 +134,28 @@ function Hotel() {
   return (
     <div>
       <Navbar />
-      <h1 className="title">Voici la liste des hotels</h1>
+      <h1 className="title">Voici la liste des chambres disponibles</h1>
       <div className="listContainer">
         <div className="listWrapper">
           <div className="listSearch">
             <h1 className="lsTitle">Chercher</h1>
             <div className="lsItem">
-              <label>Destination</label>
-              <Sidebar />
+              <Sidebar options={options} insertSearchParams={newParam} />
             </div>
-            <button /* onClick={handleClick} */>Chercher</button>
+            <button onClick={launchSearch}>Chercher</button>
           </div>
           <div className="listResult">
-                <HotelDescription />
-                <HotelDescription />
-                <HotelDescription />
-                <HotelDescription />
+            {loading && "Loading"}
+            {error && "error"}
+            {filterMode ? <button onClick={terminateSearch}>Réinitialiser la recherche</button> : ""}
+            <br />
+            {
+              data.map(room => {
+                return (
+                  <HotelDescription key={room.id} item={room}></HotelDescription>
+                )
+              })
+            }
           </div>
         </div>
       </div>
