@@ -1,11 +1,3 @@
-/* import ImageOne from "../../assets/rooms/1.png";
-import ImageTwo from "../../assets/rooms/2.png";
-import ImageThree from "../../assets/rooms/3.png";
-import ImageFour from "../../assets/rooms/4.png";
-import ImageFive from "../../assets/rooms/5.png";
-import ImageSix from "../../assets/rooms/6.png";
-import ImageSeven from "../../assets/rooms/7.png"; */
-
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "./room.jpg";
@@ -16,11 +8,16 @@ import { useEffect, useState } from "react";
 
 const FeaturedProperties = () => {
   const [data, setData] = useState([]);
-  const { get, post, response, error, loading } = useFetch('http://localhost:8000');
+  const { get, response, error, loading } = useFetch('http://localhost:8000');
 
   async function fetchBestHotels() {
-    const hotels = await get('/hotels/rate');
-    if (response.ok) setData(hotels);
+    const initialHotels = await get('/hotels/rate');
+    const hotels = await Promise.all(initialHotels.map(async hotel => {
+      const city = await get(`/city/${hotel.id_city}`);
+      hotel.city = city[0].name;
+      return hotel;
+    }))
+    if(response.ok) setData(hotels);
   }
 
   useEffect(() => {
@@ -33,9 +30,10 @@ const FeaturedProperties = () => {
       {error && "Erreur lors du chargement"}
       {data.map(hotel => {
         return (
-          <div className="fpItem">
+          <div className="fpItem" key={hotel.id}>
             <img src={hotel.photo} alt="" className="fpImg" />
             <span className="fpName">{hotel.name}</span>
+            <span className="fpCity">{hotel.city}</span>
             <div className="fpRating">
               <button>{hotel.total_rate}</button>
             </div>
