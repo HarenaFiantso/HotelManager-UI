@@ -1,4 +1,4 @@
-import { Reserve } from "./components/reserve/Reserve";
+import Reserve  from "./pages/reserve/Reserve";
 import Home from "./pages/home/Home";
 import Hotel from "./pages/hotel/Hotel";
 import List from "./pages/list/List";
