@@ -16,7 +16,7 @@ const HotelDescription = ({ item }) => {
             <button>{item.total_price} $</button>
           </div>
         <div className="siDetailTexts">
-          <Link to={`/hotels/${item.id}`}>
+          <Link to={`/room/reserve/${item.id}`}>
             <button className="siCheckButton">Réserver</button>
           </Link>
         </div>
