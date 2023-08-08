@@ -1,9 +1,22 @@
 import React, { useState } from "react";
-import "./reserve.css"
+import { DateRange } from "react-date-range";
+import "react-date-range/dist/styles.css"; // main css file
+import "react-date-range/dist/theme/default.css"; // theme css file
+import { format } from "date-fns";
+import "./reserve.css";
 
 function Reserve() {
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
+  const [destination, setDestination] = useState("");
+  const [openDate, setOpenDate] = useState(false);
+  const [dates, setDates] = useState([
+    {
+      startDate: new Date(),
+      endDate: new Date(),
+      key: "selection",
+    },
+  ]);
   const [reservationType, setReservationType] = useState("option1");
 
   const handleSubmit = (e) => {
@@ -13,21 +26,25 @@ function Reserve() {
 
   return (
     <form className="reservation-form" onSubmit={handleSubmit}>
-      <label>
-        Choisissez la plage de dates de séjour:
-        <input
-          type="date"
-          value={startDate}
-          onChange={(e) => setStartDate(e.target.value)}
-          required
-        />
-        <input
-          type="date"
-          value={endDate}
-          onChange={(e) => setEndDate(e.target.value)}
-          required
-        />
-      </label>
+      <div className="label">
+        <span
+          onClick={() => setOpenDate(!openDate)}
+          className="headerSearchText"
+        >{`${format(dates[0].startDate, "MM/dd/yyyy")} à ${format(
+          dates[0].endDate,
+          "MM/dd/yyyy"
+        )}`}</span>
+        {openDate && (
+          <DateRange
+            editableDateInputs={true}
+            onChange={(item) => setDates([item.selection])}
+            moveRangeOnFirstSelection={false}
+            ranges={dates}
+            className="date"
+            minDate={new Date()}
+          />
+        )}
+      </div>
 
       <br />
 
@@ -51,7 +68,6 @@ function Reserve() {
 }
 
 export default Reserve;
-
 
 /* function ReservationForm() {
 

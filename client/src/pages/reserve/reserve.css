@@ -9,10 +9,25 @@
   max-width: 400px;
 }
 
-.reservation-form label {
-  display: block;
-  margin-bottom: 8px;
-  font-weight: bold;
+.headerSearchItem {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.headerSearchInput {
+  border: none;
+  background-color: transparent;
+  outline: none;
+  padding: 10px;
+  color: black;
+  font-weight: 400;
+}
+
+.headerSearchText {
+  color: var(--light-color);
+  cursor: pointer;
+  font-size: 14px;
 }
 
 .reservation-form input[type="date"],
