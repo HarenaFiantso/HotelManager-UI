@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
-import { Geist, Poppins } from "next/font/google";
+import { Poppins } from "next/font/google";
+import { ThemeProvider } from "next-themes";
 import "./globals.css";
 import { ReactNode } from "react";
+import { DarkLightSwitchBtn } from "@/components/common";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -20,8 +22,17 @@ export default function RootLayout({
   children: ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${poppins.className} antialiased`}>{children}</body>
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${poppins.className} antialiased`}>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <main className="relative">
+            {children}
+            <div className="absolute right-5 bottom-5 flex items-center gap-2">
+              <DarkLightSwitchBtn />
+            </div>
+          </main>
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
