@@ -4,6 +4,7 @@
 ![Nextjs](https://img.shields.io/badge/Next-v15.3.0-violet?logo=nextdotjs)
 ![TailwindCSS](https://img.shields.io/badge/Tailwind-v4-orange?logo=tailwindcss)
 ![License](https://img.shields.io/badge/License-MIT-green)
+[![ci](https://github.com/HarenaFiantso/HotelManager-UI/actions/workflows/ci.yml/badge.svg)](https://github.com/HarenaFiantso/actions/actions/workflows/ci.yml)
 
 This project was recreated to explore the use of React with Next.js and to learn new concepts together with my friends.
 
