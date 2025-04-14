@@ -3,7 +3,6 @@ import { Poppins } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import "./globals.css";
 import { ReactNode } from "react";
-import { ClerkProvider } from "@clerk/nextjs";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -22,14 +21,12 @@ export default function RootLayout({
   children: ReactNode;
 }>) {
   return (
-    <ClerkProvider>
-      <html lang="en" suppressHydrationWarning>
-        <body className={`${poppins.className} bg-zinc-100 antialiased dark:bg-zinc-950`}>
-          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-            {children}
-          </ThemeProvider>
-        </body>
-      </html>
-    </ClerkProvider>
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${poppins.className} bg-zinc-100 antialiased dark:bg-zinc-950`}>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          {children}
+        </ThemeProvider>
+      </body>
+    </html>
   );
 }
