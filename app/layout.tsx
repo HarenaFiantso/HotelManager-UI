@@ -4,7 +4,6 @@ import { ThemeProvider } from "next-themes";
 import "./globals.css";
 import { ReactNode } from "react";
 import { ClerkProvider } from "@clerk/nextjs";
-import { DarkLightSwitchBtn } from "@/components/common";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -25,14 +24,9 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en" suppressHydrationWarning>
-        <body className={`${poppins.className} antialiased`}>
+        <body className={`${poppins.className} bg-zinc-100 antialiased dark:bg-zinc-900/9`}>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-            <main className="relative">
-              {children}
-              <div className="absolute right-5 bottom-5 flex items-center gap-2">
-                <DarkLightSwitchBtn />
-              </div>
-            </main>
+            {children}
           </ThemeProvider>
         </body>
       </html>

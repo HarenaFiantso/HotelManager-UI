@@ -29,6 +29,7 @@
     "drizzle-orm": "^0.41.0",
     "husky": "^9.1.7",
     "lucide-react": "^0.487.0",
+    "motion": "^12.7.2",
     "next": "15.3.0",
     "next-themes": "^0.4.6",
     "react": "^19.0.0",
