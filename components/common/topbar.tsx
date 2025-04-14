@@ -33,7 +33,7 @@ export const TopBar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <Navbar className="bg-white py-3 shadow dark:bg-zinc-900">
+    <Navbar className="py-3">
       <NavBody>
         <NavbarLogo />
         <NavItems items={navItems} />

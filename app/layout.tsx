@@ -12,7 +12,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Hotel Manager",
+  title: "Hoteliko",
   description: "A simple hotel management system",
 };
 
@@ -24,7 +24,7 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en" suppressHydrationWarning>
-        <body className={`${poppins.className} bg-zinc-100 antialiased dark:bg-zinc-900/9`}>
+        <body className={`${poppins.className} bg-zinc-100 antialiased dark:bg-zinc-950`}>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             {children}
           </ThemeProvider>
